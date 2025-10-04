@@ -1,1 +1,8 @@
-{}
+{
+  "apiurl": {
+    "display_name": "apiurl",
+    "description": "Please enter your apiurl",
+    "type": "url",
+    "required": true
+  }
+}

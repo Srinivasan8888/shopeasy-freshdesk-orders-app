@@ -1,20 +1,25 @@
-## Your First App
+## Freshdesk App Project
 
-This app displays the name of the requester of a freshdesk ticket in the ticket_sidebar placeholder
+Congratulations on creating your App Project! Feel free to replace this text with your project description.
 
-### Files and Folders
+### Project folder structure explained
+
     .
-    ├── README.md                 A file for your future self and developer friends to learn about app
-    ├── app                       A folder to place all assets required for frontend components
-    │   ├── index.html            A landing page for the user to use the app
-    │   ├── scripts               JavaScript to place files frontend components business logic
-    │   │   └── app.js
-    │   └── styles                A folder to place all the styles for app
-    │       ├── images
-    │       │   └── icon.svg
-    │       └── style.css
-    ├── config                    A folder to place all the configuration files
-    │   └── iparams.json
-    └── manifest.json             A JSON file holding meta data for app to run on platform
-
-Explore [more of app sample apps](https://community.developers.freshworks.com/t/freshworks-sample-apps/3604) on the Freshworks github respository.
+    ├── README.md                  This file.
+    ├── config                     Installation parameter configs.
+    │   ├── iparams.json           Installation parameter config in English language.
+    │   └── iparam_test_data.json  Installation parameter data for local testing.
+    └── manifest.json              Project manifest.
+    └── server                     Business logic for remote request and event handlers.
+        ├── lib
+        │   └── handle-response.js
+        ├── server.js
+        └── test_data
+            ├── onAppInstall.json
+            ├── onAppUninstall.json
+            ├── onContactCreate.json
+            ├── onContactUpdate.json
+            ├── onConversationCreate.json
+            ├── onExternalEvent.json
+            ├── onTicketCreate.json
+            └── onTicketUpdate.json
