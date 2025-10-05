@@ -1,151 +1,384 @@
-console.log('🚀 Order History App Starting...');
-
 init();
 
 async function init() {
   try {
-    console.log('📱 Initializing app...');
+    console.log('Initializing app...');
     const client = await app.initialized();
-    console.log('✅ App initialized successfully');
-    
+    console.log('App client initialized successfully');
+
+    // Store client globally for debugging
+    window.client = client;
+
+    // Initialize the ticket sidebar UI
+    initializeTicketSidebar();
+
+    // Load order history when app is activated
     client.events.on('app.activated', () => {
-      console.log('🎯 App activated event fired');
+      console.log('App activated event triggered');
       loadOrderHistory(client);
     });
-    
-    // Also try to load immediately in case the event already fired
+
+    // Load order history immediately
+    console.log('Setting timeout to load order history...');
     setTimeout(() => {
-      console.log('⏰ Timeout fallback - trying to load order history');
+      console.log('Timeout triggered, loading order history...');
       loadOrderHistory(client);
     }, 1000);
-    
+
   } catch (error) {
-    console.error('❌ Failed to initialize app:', error);
+    console.error('Failed to initialize app:', error);
     showError('Failed to initialize app: ' + error.message);
   }
+}
+
+function initializeTicketSidebar() {
+  // The HTML structure already exists, just add the CSS for styling
+  const style = document.createElement('style');
+  style.textContent = `
+    .hidden { display: none !important; }
+    .summary-stats {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .stat {
+      flex: 1;
+      min-width: 80px;
+      text-align: center;
+      padding: 8px;
+      background: #f8fafc;
+      border-radius: 6px;
+      border: 1px solid #e2e8f0;
+    }
+    .stat-value {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 2px;
+    }
+    .stat-label {
+      font-size: 10px;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .order-item {
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+      padding: 10px;
+      margin-bottom: 8px;
+      background: white;
+    }
+    .order-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .order-id {
+      font-weight: 600;
+      color: #374151;
+      font-size: 13px;
+    }
+    .order-status {
+      padding: 2px 6px;
+      border-radius: 10px;
+      font-size: 10px;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: white;
+    }
+    .status-delivered { background: #059669; }
+    .status-shipped { background: #2563eb; }
+    .status-pending-payment { background: #d97706; }
+    .status-pending-shipment { background: #d97706; }
+    .status-cancelled { background: #dc2626; }
+    .status-returned { background: #7c3aed; }
+    .status-processing-return { background: #d97706; }
+    .order-details {
+      color: #6b7280;
+      font-size: 12px;
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+    .order-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .order-amount {
+      font-weight: 600;
+      color: #059669;
+      font-size: 13px;
+    }
+    .order-date {
+      font-size: 11px;
+      color: #9ca3af;
+    }
+    .orders-container {
+      margin-top: 16px;
+    }
+  `;
+  document.head.appendChild(style);
 }
 
 async function loadOrderHistory(client) {
   try {
     showLoading();
+
+    // Debug: Check what client methods are available
+    console.log('Client object keys:', Object.keys(client));
+    console.log('Client iparams available:', typeof client.iparams);
+
+    // Get customer contact information
     const contact = await getCustomerContact(client);
-    console.log('Customer identified:', contact);
-    
+    console.log('Customer contact:', contact);
+
+    // Display customer info
     displayCustomerInfo(contact);
+
+    // Get orders data
     const orders = await getOrdersData(client, contact.email);
-    
+    console.log('Orders found:', orders.length, 'for email:', contact.email);
+
     if (orders && orders.length > 0) {
       displayOrders(orders);
     } else {
       showNoOrders();
     }
-    
+
   } catch (error) {
-    console.error('Error loading order history:', error);
-    showError('Failed to load order history: ' + error.message);
+    console.error('Failed to load order history:', error);
+
+    // Provide more specific error messages
+    let errorMessage = error.message;
+    if (error.message.includes('Unable to retrieve customer contact')) {
+      errorMessage = 'Unable to identify customer. Please ensure this app is opened from a ticket.';
+    } else if (error.message.includes('API URL not configured')) {
+      errorMessage = 'API URL not configured. Please contact your administrator.';
+    } else if (error.message.includes('Failed to fetch order data')) {
+      errorMessage = 'Failed to fetch order data. Please check your API configuration and network connection.';
+    } else if (error.message.includes('Invalid API response')) {
+      errorMessage = 'Invalid response from order API. Please check the API endpoint.';
+    }
+
+    showError(errorMessage);
   }
 }
 
 async function getCustomerContact(client) {
+  // Try different methods to get customer contact information
   const methods = [
-    () => client.data.get('contact').then(data => data.contact),
-    () => client.data.get('requester').then(data => data.requester),
-    () => client.data.get('loggedInUser').then(data => data.loggedInUser),
-    () => client.data.get('ticket').then(data => data.ticket.requester)
+    {
+      name: 'contact',
+      fn: () => client.data.get('contact').then(data => data.contact)
+    },
+    {
+      name: 'requester',
+      fn: () => client.data.get('requester').then(data => data.requester)
+    },
+    {
+      name: 'ticket.requester',
+      fn: () => client.data.get('ticket').then(data => data.ticket?.requester)
+    },
+    {
+      name: 'ticket.contact',
+      fn: () => client.data.get('ticket').then(data => data.ticket?.contact)
+    },
+    {
+      name: 'loggedInUser',
+      fn: () => client.data.get('loggedInUser').then(data => data.loggedInUser)
+    }
   ];
-  
+
   for (const method of methods) {
     try {
-      const contact = await method();
+      console.log(`Trying method: ${method.name}`);
+      const contact = await method.fn();
+      console.log(`Method ${method.name} returned:`, contact);
+
       if (contact && contact.email) {
-        console.log('Got contact data:', contact);
-        return contact;
+        console.log(`✅ Successfully got contact from ${method.name}:`, contact.email);
+        return {
+          email: contact.email,
+          name: contact.name || contact.first_name || contact.display_name || contact.email.split('@')[0],
+          id: contact.id || contact.user_id
+        };
       }
     } catch (error) {
-      console.log('Method failed:', error.message);
+      console.log(`Method ${method.name} failed:`, error.message);
+      // Method failed, try next one
     }
   }
-  
-  // Fallback for testing
-  return {
-    name: 'Test Customer',
-    email: 'srinivasan.2021@vitalum.ac.in'
-  };
+
+  // No fallback - throw error if no contact data available
+  throw new Error('Unable to retrieve customer contact information. Please ensure the app is loaded in a ticket context.');
 }
 
 async function getOrdersData(client, email) {
   try {
-    console.log('Testing SMI connection...');
-    await client.request.invoke('testMethod', { test: 'hello' });
-    
-    const orders = await fetchOrderHistory(client, email);
-    console.log('Successfully fetched orders from server:', orders?.length || 0);
-    return orders;
-  } catch (smiError) {
-    console.error('SMI failed, using sample data:', smiError);
-    const orders = getSampleOrders(email);
-    console.log('Using sample data:', orders?.length || 0, 'orders');
-    return orders;
+    console.log('Getting orders for email:', email);
+
+    // Get API URL from installation parameters
+    console.log('Attempting to get iparams...');
+    let apiUrl;
+
+    try {
+      const iparams = await client.iparams.get();
+      console.log('iparams retrieved:', iparams);
+      apiUrl = iparams.apiurl || iparams.apiUrl;
+    } catch (iparamsError) {
+      console.error('Failed to get iparams:', iparamsError);
+
+      // Fallback: try to get from different methods
+      try {
+        const installationParams = await client.data.get('installationParams');
+        console.log('Installation params:', installationParams);
+        apiUrl = installationParams?.apiurl || installationParams?.apiUrl;
+      } catch (fallbackError) {
+        console.error('Fallback method also failed:', fallbackError);
+      }
+    }
+
+    // If still no API URL, use the default from config
+    if (!apiUrl) {
+      console.log('No API URL found in iparams, using default from config');
+      apiUrl = 'https://mocki.io/v1/45a7b766-fdb4-4aac-974a-10b3d5720030';
+    }
+
+    console.log('Final API URL to use:', apiUrl);
+
+    // Make direct API call using client.request.get
+    let response;
+    try {
+      response = await client.request.get(apiUrl, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        }
+      });
+    } catch (requestError) {
+      console.error('Direct API request failed, trying alternative method:', requestError);
+
+      // Fallback: try using fetch if available
+      if (typeof fetch !== 'undefined') {
+        try {
+          const fetchResponse = await fetch(apiUrl, {
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            }
+          });
+
+          if (!fetchResponse.ok) {
+            throw new Error(`Fetch failed with status: ${fetchResponse.status}`);
+          }
+
+          const data = await fetchResponse.json();
+          response = {
+            status: fetchResponse.status,
+            response: data,
+            headers: fetchResponse.headers
+          };
+        } catch (fetchError) {
+          console.error('Fetch fallback also failed:', fetchError);
+          throw new Error('All API request methods failed: ' + requestError.message);
+        }
+      } else {
+        throw requestError;
+      }
+    }
+
+    console.log('API response status:', response.status);
+    console.log('API response headers:', response.headers);
+    console.log('API response type:', typeof response.response);
+
+    if (response.status !== 200) {
+      throw new Error(`API request failed with status: ${response.status}`);
+    }
+
+    let orderData;
+    try {
+      // Parse the response data - handle different response formats
+      if (typeof response.response === 'string') {
+        orderData = JSON.parse(response.response);
+      } else if (typeof response.response === 'object') {
+        orderData = response.response;
+      } else {
+        throw new Error('Unexpected response format');
+      }
+
+      console.log('Parsed order data:', orderData);
+    } catch (parseError) {
+      console.error('Failed to parse API response:', parseError);
+      console.error('Raw response:', response.response);
+      throw new Error('Invalid API response format');
+    }
+
+    // Ensure orderData is an array
+    if (!Array.isArray(orderData)) {
+      console.error('API response is not an array:', typeof orderData);
+      throw new Error('Invalid API response format - expected array');
+    }
+
+    // Filter orders by customer email
+    const customerOrders = orderData.filter(order =>
+      order.customer_email && order.customer_email.toLowerCase() === email.toLowerCase()
+    );
+
+    console.log(`Found ${customerOrders.length} orders for ${email}`);
+    return customerOrders;
+
+  } catch (apiError) {
+    console.error('API request failed:', apiError);
+    throw new Error('Failed to fetch order data: ' + (apiError.message || 'Unknown error'));
   }
 }
 
 function displayCustomerInfo(contact) {
   const customerInfo = document.getElementById('customer-info');
+  const customerName = contact.name || contact.email.split('@')[0];
   customerInfo.innerHTML = `
-    <strong>${contact.name}</strong><br>
-    <span>${contact.email}</span>
+    <div style="font-weight: 600; color: #374151; margin-bottom: 2px;">${customerName}</div>
+    <div style="color: #6b7280; font-size: 13px;">${contact.email}</div>
   `;
-}
-
-async function fetchOrderHistory(client, email) {
-  try {
-    console.log('Calling getOrderHistory with email:', email);
-    const response = await client.request.invoke('getOrderHistory', { email });
-    console.log('Server response:', response);
-    
-    // Check if response is an error object
-    if (response && response.error) {
-      throw new Error(response.error);
-    }
-    
-    // Response should be the orders array directly
-    return response;
-  } catch (error) {
-    console.error('Error fetching orders:', error);
-    throw error;
-  }
 }
 
 function displayOrders(orders) {
   hideLoading();
-  
-  const container = document.getElementById('orders-container');
+
+  const ordersContainer = document.getElementById('orders-container');
   const summaryDiv = document.getElementById('orders-summary');
   const listDiv = document.getElementById('orders-list');
-  
+
+  // Show the orders container
+  ordersContainer.classList.remove('hidden');
+
   // Display summary
   const summary = generateOrderSummary(orders);
   summaryDiv.innerHTML = `
     <div class="summary-stats">
       <div class="stat">
         <div class="stat-value">${summary.totalOrders}</div>
-        <div class="stat-label">Total Orders</div>
+        <div class="stat-label">Orders</div>
       </div>
       <div class="stat">
-        <div class="stat-value">$${summary.totalSpent.toFixed(2)}</div>
-        <div class="stat-label">Total Spent</div>
+        <div class="stat-value">$${summary.totalSpent.toFixed(0)}</div>
+        <div class="stat-label">Total</div>
       </div>
       <div class="stat">
         <div class="stat-value">${summary.recentOrders}</div>
-        <div class="stat-label">Last 30 Days</div>
+        <div class="stat-label">Recent</div>
       </div>
     </div>
   `;
-  
+
   // Display order list (most recent first)
   const sortedOrders = orders.sort((a, b) => new Date(b.date_placed) - new Date(a.date_placed));
-  const recentOrders = sortedOrders.slice(0, 10); // Show last 10 orders
-  
+  const recentOrders = sortedOrders.slice(0, 15); // Show last 15 orders
+
   listDiv.innerHTML = recentOrders.map(order => `
     <div class="order-item">
       <div class="order-header">
@@ -156,39 +389,38 @@ function displayOrders(orders) {
         ${order.summary_items}
       </div>
       <div class="order-meta">
-        <div class="order-amount">$${order.total_amount.toFixed(2)} ${order.currency}</div>
+        <div class="order-amount">$${order.total_amount.toFixed(2)}</div>
         <div class="order-date">${formatDate(order.date_placed)}</div>
       </div>
     </div>
   `).join('');
-  
-  container.classList.remove('hidden');
 }
 
 function generateOrderSummary(orders) {
   const now = new Date();
   const thirtyDaysAgo = new Date(now.getTime() - (30 * 24 * 60 * 60 * 1000));
-  
+
   const totalOrders = orders.length;
   const totalSpent = orders.reduce((sum, order) => sum + order.total_amount, 0);
   const recentOrders = orders.filter(order => new Date(order.date_placed) >= thirtyDaysAgo).length;
-  
+
   return { totalOrders, totalSpent, recentOrders };
 }
 
 function formatDate(dateString) {
   const date = new Date(dateString);
-  return date.toLocaleDateString('en-US', { 
-    year: 'numeric', 
-    month: 'short', 
-    day: 'numeric' 
+  return date.toLocaleDateString('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: '2-digit'
   });
 }
 
 function showLoading() {
   document.getElementById('loading').classList.remove('hidden');
   document.getElementById('error').classList.add('hidden');
-  document.getElementById('orders-container').classList.add('hidden');
+  document.getElementById('orders-summary').innerHTML = '';
+  document.getElementById('orders-list').innerHTML = '';
   document.getElementById('no-orders').classList.add('hidden');
 }
 
@@ -205,127 +437,4 @@ function showError(message) {
 function showNoOrders() {
   hideLoading();
   document.getElementById('no-orders').classList.remove('hidden');
-}
-
-function getSampleOrders(email) {
-  // Sample data for testing when SMI fails - includes all orders for both test customers
-  const sampleData = [
-    {
-      "order_id": "SE-200299",
-      "customer_external_id": "user2",
-      "customer_email": "srinivasanabarnathlingam08@gmail.com",
-      "date_placed": "2024-02-25",
-      "status": "Delivered",
-      "total_amount": 75.00,
-      "currency": "USD",
-      "summary_items": "1x Backpack, 1x Laptop Sleeve"
-    },
-    {
-      "order_id": "SE-200330",
-      "customer_external_id": "user2",
-      "customer_email": "srinivasanabarnathlingam08@gmail.com",
-      "date_placed": "2024-03-20",
-      "status": "Pending Payment",
-      "total_amount": 670.00,
-      "currency": "USD",
-      "summary_items": "1x Tablet Pro 11-inch"
-    },
-    {
-      "order_id": "SE-200375",
-      "customer_external_id": "user2",
-      "customer_email": "srinivasanabarnathlingam08@gmail.com",
-      "date_placed": "2024-04-01",
-      "status": "Delivered",
-      "total_amount": 18.00,
-      "currency": "USD",
-      "summary_items": "3x USB-C Cables"
-    },
-    {
-      "order_id": "SE-200412",
-      "customer_external_id": "user2",
-      "customer_email": "srinivasanabarnathlingam08@gmail.com",
-      "date_placed": "2024-04-18",
-      "status": "Returned",
-      "total_amount": 499.99,
-      "currency": "USD",
-      "summary_items": "1x Robot Vacuum Cleaner"
-    },
-    {
-      "order_id": "SE-200455",
-      "customer_external_id": "user2",
-      "customer_email": "srinivasanabarnathlingam08@gmail.com",
-      "date_placed": "2024-05-12",
-      "status": "Delivered",
-      "total_amount": 22.50,
-      "currency": "USD",
-      "summary_items": "1x Stainless Steel Water Bottle"
-    },
-    {
-      "order_id": "SE-200499",
-      "customer_external_id": "user2",
-      "customer_email": "srinivasanabarnathlingam08@gmail.com",
-      "date_placed": "2024-05-30",
-      "status": "Processing Return",
-      "total_amount": 1250.00,
-      "currency": "USD",
-      "summary_items": "1x 55-inch 4K TV"
-    },
-    {
-      "order_id": "SE-200578",
-      "customer_external_id": "user2",
-      "customer_email": "srinivasanabarnathlingam08@gmail.com",
-      "date_placed": "2024-06-25",
-      "status": "Delivered",
-      "total_amount": 299.00,
-      "currency": "USD",
-      "summary_items": "1x Smartwatch, 2x Extra Bands"
-    },
-    {
-      "order_id": "SE-100199",
-      "customer_external_id": "user1",
-      "customer_email": "srinivasan.2021@vitalum.ac.in",
-      "date_placed": "2024-02-10",
-      "status": "Processing Return",
-      "total_amount": 780.00,
-      "currency": "USD",
-      "summary_items": "1x DSLR Camera"
-    },
-    {
-      "order_id": "SE-100210",
-      "customer_external_id": "user1",
-      "customer_email": "srinivasan.2021@vitalum.ac.in",
-      "date_placed": "2024-02-20",
-      "status": "Delivered",
-      "total_amount": 320.00,
-      "currency": "USD",
-      "summary_items": "1x Electric Kettle, 1x Espresso Machine"
-    },
-    {
-      "order_id": "SE-100255",
-      "customer_external_id": "user1",
-      "customer_email": "srinivasan.2021@vitalum.ac.in",
-      "date_placed": "2024-03-10",
-      "status": "Cancelled",
-      "total_amount": 24.99,
-      "currency": "USD",
-      "summary_items": "1x Phone Case, 1x Screen Protector"
-    },
-    {
-      "order_id": "SE-100276",
-      "customer_external_id": "user1",
-      "customer_email": "srinivasan.2021@vitalum.ac.in",
-      "date_placed": "2024-03-28",
-      "status": "Pending Shipment",
-      "total_amount": 1350.00,
-      "currency": "USD",
-      "summary_items": "1x UltraWide Monitor"
-    }
-  ];
-  
-  const filtered = sampleData.filter(order => 
-    order.customer_email.toLowerCase() === email.toLowerCase()
-  );
-  
-  console.log(`📋 Sample data: found ${filtered.length} orders for ${email}`);
-  return filtered;
 }

@@ -1,8 +1,9 @@
 {
   "apiurl": {
-    "display_name": "apiurl",
-    "description": "Please enter your apiurl",
+    "display_name": "API URL",
+    "description": "Please enter your API URL for order data",
     "type": "url",
-    "required": true
+    "required": true,
+    "default_value": "https://mocki.io/v1/45a7b766-fdb4-4aac-974a-10b3d5720030"
   }
 }
