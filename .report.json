@@ -1,5 +1,16 @@
 {
-  "lints": [],
+  "lints": [
+    {
+      "severity": 2,
+      "value": "app\\scripts\\app.js::234: 'client' is defined but never used.",
+      "type": "lint"
+    },
+    {
+      "severity": 1,
+      "value": "app\\scripts\\app.js::239: Use client.request when making API requests",
+      "type": "custom-js-lint"
+    }
+  ],
   "coverage": {
     "server\\server.js": {
       "path": "server\\server.js",

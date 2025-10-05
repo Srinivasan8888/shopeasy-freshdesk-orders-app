@@ -235,7 +235,7 @@ async function fetchOrdersFromApi(apiUrl) {
   console.log('fetchOrdersFromApi called with URL:', apiUrl);
 
   try {
-    console.log('Making direct API request to:', apiUrl);
+    console.log('Making API request using fetch to:', apiUrl);
     const response = await fetch(apiUrl, {
       method: 'GET',
       headers: {
