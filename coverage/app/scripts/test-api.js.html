@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">4.34% </span>
+                <span class="strong">3.22% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/23</span>
+                <span class='fraction'>1/31</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>0/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>0/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">4.34% </span>
+                <span class="strong">3.22% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/23</span>
+                <span class='fraction'>1/31</span>
             </div>
         
             
@@ -96,95 +96,80 @@
 <a name='L31'></a><a href='#L31'>31</a>
 <a name='L32'></a><a href='#L32'>32</a>
 <a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a>
-<a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a>
-<a name='L37'></a><a href='#L37'>37</a>
-<a name='L38'></a><a href='#L38'>38</a>
-<a name='L39'></a><a href='#L39'>39</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span></td><td class="text"><pre class="prettyprint lang-js">// Simple test to verify API connectivity without iparams
-async function <span class="fstat-no" title="function not covered" >testApiDirectly(</span>) {
-  const testApiUrl = <span class="cstat-no" title="statement not covered" >'https://mocki.io/v1/45a7b766-fdb4-4aac-974a-10b3d5720030';</span>
-  const testEmail = <span class="cstat-no" title="statement not covered" >'srinivasan.2021@vitalum.ac.in';</span>
-  
-<span class="cstat-no" title="statement not covered" >  console.log('Testing API directly...');</span>
-<span class="cstat-no" title="statement not covered" >  console.log('API URL:', testApiUrl);</span>
-<span class="cstat-no" title="statement not covered" >  console.log('Test email:', testEmail);</span>
-  
-<span class="cstat-no" title="statement not covered" >  try {</span>
-    const response = <span class="cstat-no" title="statement not covered" >await fetch(testApiUrl);</span>
-<span class="cstat-no" title="statement not covered" >    console.log('Response status:', response.status);</span>
-    
-<span class="cstat-no" title="statement not covered" >    if (!response.ok) {</span>
-<span class="cstat-no" title="statement not covered" >      throw new Error(`HTTP error! status: ${response.status}`);</span>
-    }
-    
-    const data = <span class="cstat-no" title="statement not covered" >await response.json();</span>
-<span class="cstat-no" title="statement not covered" >    console.log('Raw API data:', data);</span>
-<span class="cstat-no" title="statement not covered" >    console.log('Data type:', typeof data);</span>
-<span class="cstat-no" title="statement not covered" >    console.log('Is array:', Array.isArray(data));</span>
-    
-<span class="cstat-no" title="statement not covered" >    if (Array.isArray(data)) {</span>
-      const filteredOrders = <span class="cstat-no" title="statement not covered" >data.filter(<span class="fstat-no" title="function not covered" >or</span>der =&gt; </span>
-<span class="cstat-no" title="statement not covered" >        order.customer_email &amp;&amp; order.customer_email.toLowerCase() === testEmail.toLowerCase()</span>
-      );
-<span class="cstat-no" title="statement not covered" >      console.log(`Found ${filteredOrders.length} orders for ${testEmail}`);</span>
-<span class="cstat-no" title="statement not covered" >      console.log('Sample orders:', filteredOrders.slice(0, 2));</span>
-    }
-    
-<span class="cstat-no" title="statement not covered" >    return data;</span>
-  } catch (error) {
-<span class="cstat-no" title="statement not covered" >    console.error('Direct API test failed:', error);</span>
-<span class="cstat-no" title="statement not covered" >    throw error;</span>
-  }
-}
-&nbsp;
-// Add this to window so we can call it from console
-window.testApiDirectly = testApiDirectly;</pre></td></tr></table></pre>
+<a name='L34'></a><a href='#L34'>34</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span>
+<span class="cline-any cline-no">0</span></td><td class="text"><pre class="prettyprint lang-js">Unable to lookup source: app\scripts\test-api.js (ENOENT: no such file or directory, open 'app\scripts\test-api.js')
+Error: Unable to lookup source: app\scripts\test-api.js (ENOENT: no such file or directory, open 'app\scripts\test-api.js')
+    at Context.defaultSourceLookup [as sourceFinder] (C:\Users\srini\AppData\Roaming\nvm\v18.12.1\node_modules\fdk\node_modules\istanbul-lib-report\lib\context.js:17:15)
+    at Context.getSource (C:\Users\srini\AppData\Roaming\nvm\v18.12.1\node_modules\fdk\node_modules\istanbul-lib-report\lib\context.js:71:21)
+    at annotateSourceCode (C:\Users\srini\AppData\Roaming\nvm\v18.12.1\node_modules\fdk\node_modules\istanbul-reports\lib\html\annotator.js:249:40)
+    at HtmlReport.onDetail (C:\Users\srini\AppData\Roaming\nvm\v18.12.1\node_modules\fdk\node_modules\istanbul-reports\lib\html\index.js:414:33)
+    at Visitor.value (C:\Users\srini\AppData\Roaming\nvm\v18.12.1\node_modules\fdk\node_modules\istanbul-lib-report\lib\tree.js:38:38)
+    at ReportNode.visit (C:\Users\srini\AppData\Roaming\nvm\v18.12.1\node_modules\fdk\node_modules\istanbul-lib-report\lib\tree.js:88:21)
+    at C:\Users\srini\AppData\Roaming\nvm\v18.12.1\node_modules\fdk\node_modules\istanbul-lib-report\lib\tree.js:92:19
+    at Array.forEach (<anonymous>)
+    at ReportNode.visit (C:\Users\srini\AppData\Roaming\nvm\v18.12.1\node_modules\fdk\node_modules\istanbul-lib-report\lib\tree.js:91:28)
+    at C:\Users\srini\AppData\Roaming\nvm\v18.12.1\node_modules\fdk\node_modules\istanbul-lib-report\lib\tree.js:92:19
+    at Array.forEach (<anonymous>)
+    at ReportNode.visit (C:\Users\srini\AppData\Roaming\nvm\v18.12.1\node_modules\fdk\node_modules\istanbul-lib-report\lib\tree.js:91:28)
+    at ReportTree.visit (C:\Users\srini\AppData\Roaming\nvm\v18.12.1\node_modules\fdk\node_modules\istanbul-lib-report\lib\tree.js:127:24)
+    at HtmlReport.execute (C:\Users\srini\AppData\Roaming\nvm\v18.12.1\node_modules\fdk\node_modules\istanbul-lib-report\lib\report-base.js:12:44)
+    at Object.update (C:\Users\srini\AppData\Roaming\nvm\v18.12.1\node_modules\fdk\lib\utils\coverage.js:129:20)
+    at C:\Users\srini\AppData\Roaming\nvm\v18.12.1\node_modules\fdk\lib\routes\iframe.js:212:16
+    at Layer.handle [as handle_request] (C:\Users\srini\AppData\Roaming\nvm\v18.12.1\node_modules\fdk\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\srini\AppData\Roaming\nvm\v18.12.1\node_modules\fdk\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\srini\AppData\Roaming\nvm\v18.12.1\node_modules\fdk\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\srini\AppData\Roaming\nvm\v18.12.1\node_modules\fdk\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\srini\AppData\Roaming\nvm\v18.12.1\node_modules\fdk\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\srini\AppData\Roaming\nvm\v18.12.1\node_modules\fdk\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\srini\AppData\Roaming\nvm\v18.12.1\node_modules\fdk\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\srini\AppData\Roaming\nvm\v18.12.1\node_modules\fdk\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\srini\AppData\Roaming\nvm\v18.12.1\node_modules\fdk\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\srini\AppData\Roaming\nvm\v18.12.1\node_modules\fdk\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\srini\AppData\Roaming\nvm\v18.12.1\node_modules\fdk\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\srini\AppData\Roaming\nvm\v18.12.1\node_modules\fdk\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\srini\AppData\Roaming\nvm\v18.12.1\node_modules\fdk\node_modules\express\lib\router\index.js:346:12)
+    at Immediate.next (C:\Users\srini\AppData\Roaming\nvm\v18.12.1\node_modules\fdk\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\srini\AppData\Roaming\nvm\v18.12.1\node_modules\fdk\node_modules\express\lib\router\index.js:646:15)
+    at process.processImmediate (node:internal/timers:473:21)</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-10-05T20:46:20.649Z
+                at 2025-10-05T22:45:07.631Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

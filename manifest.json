@@ -13,8 +13,5 @@
   "engines": {
     "node": "18.12.1",
     "fdk": "9.7.0"
-  },
-  "dependencies": {
-    "https": "1.0.0"
   }
 }

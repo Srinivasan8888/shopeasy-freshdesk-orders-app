@@ -6,20 +6,14 @@ async function init() {
     const client = await app.initialized();
     console.log('App client initialized successfully');
 
-    // Store client globally for debugging
     window.client = client;
-
-    // Initialize the ticket sidebar UI
     initializeTicketSidebar();
 
-    // Load order history when app is activated
     client.events.on('app.activated', () => {
       console.log('App activated event triggered');
       loadOrderHistory(client);
     });
 
-    // Load order history immediately
-    console.log('Setting timeout to load order history...');
     setTimeout(() => {
       console.log('Timeout triggered, loading order history...');
       loadOrderHistory(client);
@@ -32,7 +26,6 @@ async function init() {
 }
 
 function initializeTicketSidebar() {
-  // The HTML structure already exists, just add the CSS for styling
   const style = document.createElement('style');
   style.textContent = `
     .hidden { display: none !important; }
@@ -126,19 +119,12 @@ function initializeTicketSidebar() {
 async function loadOrderHistory(client) {
   try {
     showLoading();
-
-    // Debug: Check what client methods are available
     console.log('Client object keys:', Object.keys(client));
-    console.log('Client iparams available:', typeof client.iparams);
 
-    // Get customer contact information
     const contact = await getCustomerContact(client);
     console.log('Customer contact:', contact);
-
-    // Display customer info
     displayCustomerInfo(contact);
 
-    // Get orders data
     const orders = await getOrdersData(client, contact.email);
     console.log('Orders found:', orders.length, 'for email:', contact.email);
 
@@ -147,194 +133,157 @@ async function loadOrderHistory(client) {
     } else {
       showNoOrders();
     }
-
   } catch (error) {
     console.error('Failed to load order history:', error);
-
-    // Provide more specific error messages
-    let errorMessage = error.message;
-    if (error.message.includes('Unable to retrieve customer contact')) {
-      errorMessage = 'Unable to identify customer. Please ensure this app is opened from a ticket.';
-    } else if (error.message.includes('API URL not configured')) {
-      errorMessage = 'API URL not configured. Please contact your administrator.';
-    } else if (error.message.includes('Failed to fetch order data')) {
-      errorMessage = 'Failed to fetch order data. Please check your API configuration and network connection.';
-    } else if (error.message.includes('Invalid API response')) {
-      errorMessage = 'Invalid response from order API. Please check the API endpoint.';
-    }
-
-    showError(errorMessage);
+    showError(getErrorMessage(error));
   }
 }
 
+function getErrorMessage(error) {
+  const message = error.message;
+  if (message.includes('Unable to retrieve customer contact')) {
+    return 'Unable to identify customer. Please ensure this app is opened from a ticket.';
+  }
+  if (message.includes('API URL not configured')) {
+    return 'API URL not configured. Please contact your administrator.';
+  }
+  if (message.includes('Failed to fetch order data')) {
+    return 'Failed to fetch order data. Please check your API configuration and network connection.';
+  }
+  if (message.includes('Invalid API response')) {
+    return 'Invalid response from order API. Please check the API endpoint.';
+  }
+  return message;
+}
+
 async function getCustomerContact(client) {
-  // Try different methods to get customer contact information
-  const methods = [
-    {
-      name: 'contact',
-      fn: () => client.data.get('contact').then(data => data.contact)
-    },
-    {
-      name: 'requester',
-      fn: () => client.data.get('requester').then(data => data.requester)
-    },
-    {
-      name: 'ticket.requester',
-      fn: () => client.data.get('ticket').then(data => data.ticket?.requester)
-    },
-    {
-      name: 'ticket.contact',
-      fn: () => client.data.get('ticket').then(data => data.ticket?.contact)
-    },
-    {
-      name: 'loggedInUser',
-      fn: () => client.data.get('loggedInUser').then(data => data.loggedInUser)
-    }
-  ];
+  const contact = await tryGetContact(client);
+  if (!contact) {
+    throw new Error('Unable to retrieve customer contact information. Please ensure the app is loaded in a ticket context.');
+  }
+  return contact;
+}
 
-  for (const method of methods) {
-    try {
-      console.log(`Trying method: ${method.name}`);
-      const contact = await method.fn();
-      console.log(`Method ${method.name} returned:`, contact);
+async function tryGetContact(client) {
+  const methods = ['contact', 'requester'];
 
-      if (contact && contact.email) {
-        console.log(`✅ Successfully got contact from ${method.name}:`, contact.email);
-        return {
-          email: contact.email,
-          name: contact.name || contact.first_name || contact.display_name || contact.email.split('@')[0],
-          id: contact.id || contact.user_id
-        };
-      }
-    } catch (error) {
-      console.log(`Method ${method.name} failed:`, error.message);
-      // Method failed, try next one
-    }
+  for (const methodName of methods) {
+    const contact = await tryContactMethod(client, methodName);
+    if (contact) return contact;
   }
 
-  // No fallback - throw error if no contact data available
-  throw new Error('Unable to retrieve customer contact information. Please ensure the app is loaded in a ticket context.');
+  return null;
+}
+
+async function tryContactMethod(client, methodName) {
+  try {
+    console.log(`Trying method: ${methodName}`);
+    const result = await client.data.get(methodName);
+    const contact = result[methodName];
+    console.log(`Method ${methodName} returned:`, contact);
+
+    if (contact && contact.email) {
+      console.log(`✅ Successfully got contact from ${methodName}:`, contact.email);
+      return formatContactInfo(contact);
+    }
+  } catch (error) {
+    console.log(`Method ${methodName} failed:`, error.message);
+  }
+  return null;
+}
+
+function formatContactInfo(contact) {
+  return {
+    email: contact.email,
+    name: contact.name || contact.first_name || contact.display_name || contact.email.split('@')[0],
+    id: contact.id || contact.user_id
+  };
 }
 
 async function getOrdersData(client, email) {
   try {
     console.log('Getting orders for email:', email);
 
-    // Get API URL from installation parameters
-    console.log('Attempting to get iparams...');
+    // Get the API URL from installation parameters, with fallback to default
     let apiUrl;
-
     try {
       const iparams = await client.iparams.get();
-      console.log('iparams retrieved:', iparams);
-      apiUrl = iparams.apiurl || iparams.apiUrl;
+      apiUrl = iparams.apiurl;
+      console.log('API URL from iparams:', apiUrl);
     } catch (iparamsError) {
-      console.error('Failed to get iparams:', iparamsError);
-
-      // Fallback: try to get from different methods
-      try {
-        const installationParams = await client.data.get('installationParams');
-        console.log('Installation params:', installationParams);
-        apiUrl = installationParams?.apiurl || installationParams?.apiUrl;
-      } catch (fallbackError) {
-        console.error('Fallback method also failed:', fallbackError);
-      }
-    }
-
-    // If still no API URL, use the default from config
-    if (!apiUrl) {
-      console.log('No API URL found in iparams, using default from config');
+      console.log('Could not get iparams, using default API URL:', iparamsError);
       apiUrl = 'https://mocki.io/v1/45a7b766-fdb4-4aac-974a-10b3d5720030';
     }
 
-    console.log('Final API URL to use:', apiUrl);
-
-    // Make direct API call using client.request.get
-    let response;
-    try {
-      response = await client.request.get(apiUrl, {
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        }
-      });
-    } catch (requestError) {
-      console.error('Direct API request failed, trying alternative method:', requestError);
-
-      // Fallback: try using fetch if available
-      if (typeof fetch !== 'undefined') {
-        try {
-          const fetchResponse = await fetch(apiUrl, {
-            method: 'GET',
-            headers: {
-              'Content-Type': 'application/json',
-              'Accept': 'application/json'
-            }
-          });
-
-          if (!fetchResponse.ok) {
-            throw new Error(`Fetch failed with status: ${fetchResponse.status}`);
-          }
-
-          const data = await fetchResponse.json();
-          response = {
-            status: fetchResponse.status,
-            response: data,
-            headers: fetchResponse.headers
-          };
-        } catch (fetchError) {
-          console.error('Fetch fallback also failed:', fetchError);
-          throw new Error('All API request methods failed: ' + requestError.message);
-        }
-      } else {
-        throw requestError;
-      }
+    if (!apiUrl) {
+      // Fallback to default API URL for development
+      apiUrl = 'https://mocki.io/v1/45a7b766-fdb4-4aac-974a-10b3d5720030';
+      console.log('Using fallback API URL:', apiUrl);
     }
 
-    console.log('API response status:', response.status);
-    console.log('API response headers:', response.headers);
-    console.log('API response type:', typeof response.response);
+    const response = await fetchOrdersFromApi(apiUrl);
+    const orderData = parseOrderResponse(response);
 
-    if (response.status !== 200) {
-      throw new Error(`API request failed with status: ${response.status}`);
-    }
-
-    let orderData;
-    try {
-      // Parse the response data - handle different response formats
-      if (typeof response.response === 'string') {
-        orderData = JSON.parse(response.response);
-      } else if (typeof response.response === 'object') {
-        orderData = response.response;
-      } else {
-        throw new Error('Unexpected response format');
-      }
-
-      console.log('Parsed order data:', orderData);
-    } catch (parseError) {
-      console.error('Failed to parse API response:', parseError);
-      console.error('Raw response:', response.response);
-      throw new Error('Invalid API response format');
-    }
-
-    // Ensure orderData is an array
-    if (!Array.isArray(orderData)) {
-      console.error('API response is not an array:', typeof orderData);
-      throw new Error('Invalid API response format - expected array');
-    }
-
-    // Filter orders by customer email
-    const customerOrders = orderData.filter(order =>
-      order.customer_email && order.customer_email.toLowerCase() === email.toLowerCase()
-    );
-
-    console.log(`Found ${customerOrders.length} orders for ${email}`);
-    return customerOrders;
-
+    return filterOrdersByEmail(orderData, email);
   } catch (apiError) {
     console.error('API request failed:', apiError);
     throw new Error('Failed to fetch order data: ' + (apiError.message || 'Unknown error'));
   }
+}
+
+async function fetchOrdersFromApi(apiUrl) {
+  console.log('fetchOrdersFromApi called with URL:', apiUrl);
+
+  try {
+    console.log('Making direct API request to:', apiUrl);
+    const response = await fetch(apiUrl, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      }
+    });
+
+    console.log('API response status:', response.status);
+
+    if (!response.ok) {
+      throw new Error(`API request failed with status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    console.log('API response data:', data);
+
+    return {
+      status: response.status,
+      content: data
+    };
+  } catch (error) {
+    console.error('Error in fetchOrdersFromApi:', error);
+    throw error;
+  }
+}
+
+function parseOrderResponse(response) {
+  console.log('API response type:', typeof response.content);
+
+  const orderData = response.content;
+
+  console.log('Parsed order data:', orderData);
+
+  if (!Array.isArray(orderData)) {
+    console.error('API response is not an array:', typeof orderData);
+    throw new Error('Invalid API response format - expected array');
+  }
+
+  return orderData;
+}
+
+function filterOrdersByEmail(orderData, email) {
+  const customerOrders = orderData.filter(order =>
+    order.customer_email && order.customer_email.toLowerCase() === email.toLowerCase()
+  );
+  console.log(`Found ${customerOrders.length} orders for ${email}`);
+  return customerOrders;
 }
 
 function displayCustomerInfo(contact) {
@@ -353,10 +302,8 @@ function displayOrders(orders) {
   const summaryDiv = document.getElementById('orders-summary');
   const listDiv = document.getElementById('orders-list');
 
-  // Show the orders container
   ordersContainer.classList.remove('hidden');
 
-  // Display summary
   const summary = generateOrderSummary(orders);
   summaryDiv.innerHTML = `
     <div class="summary-stats">
@@ -365,7 +312,7 @@ function displayOrders(orders) {
         <div class="stat-label">Orders</div>
       </div>
       <div class="stat">
-        <div class="stat-value">$${summary.totalSpent.toFixed(0)}</div>
+        <div class="stat-value">${summary.totalSpent.toFixed(0)}</div>
         <div class="stat-label">Total</div>
       </div>
       <div class="stat">
@@ -375,9 +322,8 @@ function displayOrders(orders) {
     </div>
   `;
 
-  // Display order list (most recent first)
   const sortedOrders = orders.sort((a, b) => new Date(b.date_placed) - new Date(a.date_placed));
-  const recentOrders = sortedOrders.slice(0, 15); // Show last 15 orders
+  const recentOrders = sortedOrders.slice(0, 15);
 
   listDiv.innerHTML = recentOrders.map(order => `
     <div class="order-item">
@@ -389,7 +335,7 @@ function displayOrders(orders) {
         ${order.summary_items}
       </div>
       <div class="order-meta">
-        <div class="order-amount">$${order.total_amount.toFixed(2)}</div>
+        <div class="order-amount">${order.total_amount.toFixed(2)}</div>
         <div class="order-date">${formatDate(order.date_placed)}</div>
       </div>
     </div>
