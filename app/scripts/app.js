@@ -28,73 +28,11 @@ async function init() {
 async function loadOrderHistory(client) {
   try {
     showLoading();
-    
-    // Get contact/requester data - handle both agent and customer portal contexts
-    let contact;
-    try {
-      // First try to get contact data (agent view)
-      const contactData = await client.data.get('contact');
-      contact = contactData.contact;
-      console.log('Got contact data (agent view):', contact);
-    } catch (contactError) {
-      console.log('Contact data failed, trying requester data:', contactError.message);
-      // If contact fails, try to get requester data (customer portal context)
-      try {
-        const requesterData = await client.data.get('requester');
-        contact = requesterData.requester;
-        console.log('Got requester data (customer portal):', contact);
-      } catch (requesterError) {
-        console.log('Requester data failed, trying logged in user:', requesterError.message);
-        // If both fail, try to get current user (logged in customer)
-        try {
-          const userData = await client.data.get('loggedInUser');
-          contact = userData.loggedInUser;
-          console.log('Got logged in user data:', contact);
-        } catch (userError) {
-          console.error('All user data methods failed:', userError);
-          // Try to get ticket data which might contain requester info
-          try {
-            const ticketData = await client.data.get('ticket');
-            if (ticketData.ticket && ticketData.ticket.requester) {
-              contact = ticketData.ticket.requester;
-              console.log('Got contact from ticket data:', contact);
-            } else {
-              throw new Error('No requester in ticket data');
-            }
-          } catch (ticketError) {
-            console.error('Ticket data also failed:', ticketError);
-            // As a last resort, use a hardcoded email for testing
-            contact = {
-              name: 'Test Customer',
-              email: 'srinivasan.2021@vitalum.ac.in'
-            };
-            console.log('Using fallback contact data:', contact);
-          }
-        }
-      }
-    }
-    
+    const contact = await getCustomerContact(client);
     console.log('Customer identified:', contact);
     
-    // Display customer info
     displayCustomerInfo(contact);
-    
-    // Try to fetch order history from server
-    let orders = null;
-    try {
-      console.log('Testing SMI connection...');
-      const testResult = await client.request.invoke('testMethod', { test: 'hello' });
-      console.log('SMI test result:', testResult);
-      
-      // If test works, try to get real orders
-      orders = await fetchOrderHistory(client, contact.email);
-      console.log('Successfully fetched orders from server:', orders?.length || 0);
-    } catch (smiError) {
-      console.error('SMI failed, using sample data:', smiError);
-      // Fallback to sample data
-      orders = getSampleOrders(contact.email);
-      console.log('Using sample data:', orders?.length || 0, 'orders');
-    }
+    const orders = await getOrdersData(client, contact.email);
     
     if (orders && orders.length > 0) {
       displayOrders(orders);
@@ -105,6 +43,49 @@ async function loadOrderHistory(client) {
   } catch (error) {
     console.error('Error loading order history:', error);
     showError('Failed to load order history: ' + error.message);
+  }
+}
+
+async function getCustomerContact(client) {
+  const methods = [
+    () => client.data.get('contact').then(data => data.contact),
+    () => client.data.get('requester').then(data => data.requester),
+    () => client.data.get('loggedInUser').then(data => data.loggedInUser),
+    () => client.data.get('ticket').then(data => data.ticket.requester)
+  ];
+  
+  for (const method of methods) {
+    try {
+      const contact = await method();
+      if (contact && contact.email) {
+        console.log('Got contact data:', contact);
+        return contact;
+      }
+    } catch (error) {
+      console.log('Method failed:', error.message);
+    }
+  }
+  
+  // Fallback for testing
+  return {
+    name: 'Test Customer',
+    email: 'srinivasan.2021@vitalum.ac.in'
+  };
+}
+
+async function getOrdersData(client, email) {
+  try {
+    console.log('Testing SMI connection...');
+    await client.request.invoke('testMethod', { test: 'hello' });
+    
+    const orders = await fetchOrderHistory(client, email);
+    console.log('Successfully fetched orders from server:', orders?.length || 0);
+    return orders;
+  } catch (smiError) {
+    console.error('SMI failed, using sample data:', smiError);
+    const orders = getSampleOrders(email);
+    console.log('Using sample data:', orders?.length || 0, 'orders');
+    return orders;
   }
 }
 

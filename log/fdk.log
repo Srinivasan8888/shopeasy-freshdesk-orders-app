@@ -3318,3 +3318,732 @@ To simulate product, app setup, and external events, visit - http://localhost:10
 2025-10-05 15:41:40.510 +0530 [debug] (watcher.js) Broadcasted "{"file":"manifest.json"}" to all listeners.
 2025-10-05 15:41:51.981 +0530 [debug] (watcher.js) Broadcasted "{"file":"app\\scripts\\app.js"}" to all listeners.
 2025-10-05 15:45:14.210 +0530 [debug] (oauth.js) Fetching oauth configs of product : freshdesk
+2025-10-05 19:24:02.093 +0530 [debug] (configs.js) loaded default configs as "{"updates":{"manifest_url":"https://cdn.freshdev.io/assets/fdk/updates.json","period":24},"log":{"level":"info"},"javascript":{"ecma_version":2020},"request":{"timeout":15000},"global_apps":{"enabled":true},"easel":{"enabled":false},"job":{"timeout":120000}}"
+2025-10-05 19:24:02.100 +0530 [debug] (configs.js) loaded global configs as "{"global_apps":{"enabled":"false"},"request":{"timeout":15000},"job":{"timeout":120000}}"
+2025-10-05 19:24:02.100 +0530 [debug] (configs.js) loaded local configs as "{"request":{"timeout":15000},"job":{"timeout":120000},"global_apps":{"enabled":"false"}}"
+2025-10-05 19:24:02.100 +0530 [debug] (configs.js) loaded env configs as "{"updates":{},"log":{},"javascript":{},"request":{"timeout":15000},"job":{"timeout":120000}}"
+2025-10-05 19:24:02.100 +0530 [debug] (configs.js) loaded resolved configs as "{"updates":{"manifest_url":"https://cdn.freshdev.io/assets/fdk/updates.json","period":24},"log":{"level":"info"},"javascript":{"ecma_version":2020},"request":{"timeout":15000},"global_apps":{"enabled":"false"},"easel":{"enabled":false},"job":{"timeout":120000}}"
+2025-10-05 19:24:02.101 +0530 [debug] (logger.js) Starting FDK in node v18.20.8 on win32
+2025-10-05 19:24:02.101 +0530 [debug] (sequelize.js) setting up sqilite at "C:\Users\srini\Desktop\shopeasy-freshdesk-orders-app/.fdk/store.sqlite"
+2025-10-05 19:24:02.101 +0530 [debug] (data.js) Read {"version_details":{"cli":{"deprecated":{"version":"<9","message":"This FDK version has been deprecated. There will be no further feature updates to this version. For a seamless app-building experience, ensure to move to the latest FDK version. For more information, see https://developers.freshworks.com/docs/app-sdk/v2.3/freshdesk/migration-guide/#migrate-to-the-latest-platform-version."},"forced":{"version":"7.0.0","command":"npm install https://dl.freshdev.io/cli/fdk-7.0.0.tgz -g","message":"Your FDK version has been forced updated to v7.0.0, please visit https://community.developers.freshworks.com/t/fdk-v7-0-announcing-node-js-v12-and-es6-support/3606 to know more"},"latest":{"version":"9.7.0","command":"npm install https://cdn.freshdev.io/fdk/latest.tgz -g","message":"You are on the latest FDK version. For information on the features available as part of this FDK version, see https://developers.freshworks.com/docs/?tab=modules."}},"addon":{"version":"2.2.1","url":"https://cdn.freshdev.io/assets/fdk/addons/addon.zip"}},"last_updated":{"time_stamp":1759549121430}}
+2025-10-05 19:24:02.101 +0530 [debug] (updater.js) last check more than 24 hours ago, looking for updates again
+2025-10-05 19:24:02.757 +0530 [debug] (updater.js) downloaded update manifest as {"cli":{"deprecated":{"version":"<9","message":"This FDK version has been deprecated. There will be no further feature updates to this version. For a seamless app-building experience, ensure to move to the latest FDK version. For more information, see https://developers.freshworks.com/docs/app-sdk/v2.3/freshdesk/migration-guide/#migrate-to-the-latest-platform-version."},"forced":{"version":"7.0.0","command":"npm install https://dl.freshdev.io/cli/fdk-7.0.0.tgz -g","message":"Your FDK version has been forced updated to v7.0.0, please visit https://community.developers.freshworks.com/t/fdk-v7-0-announcing-node-js-v12-and-es6-support/3606 to know more"},"latest":{"version":"9.7.0","command":"npm install https://cdn.freshdev.io/fdk/latest.tgz -g","message":"You are on the latest FDK version. For information on the features available as part of this FDK version, see https://developers.freshworks.com/docs/?tab=modules."}},"addon":{"version":"2.2.1","url":"https://cdn.freshdev.io/assets/fdk/addons/addon.zip"}}
+2025-10-05 19:24:02.758 +0530 [debug] (data.js) Read {"version_details":{"cli":{"deprecated":{"version":"<9","message":"This FDK version has been deprecated. There will be no further feature updates to this version. For a seamless app-building experience, ensure to move to the latest FDK version. For more information, see https://developers.freshworks.com/docs/app-sdk/v2.3/freshdesk/migration-guide/#migrate-to-the-latest-platform-version."},"forced":{"version":"7.0.0","command":"npm install https://dl.freshdev.io/cli/fdk-7.0.0.tgz -g","message":"Your FDK version has been forced updated to v7.0.0, please visit https://community.developers.freshworks.com/t/fdk-v7-0-announcing-node-js-v12-and-es6-support/3606 to know more"},"latest":{"version":"9.7.0","command":"npm install https://cdn.freshdev.io/fdk/latest.tgz -g","message":"You are on the latest FDK version. For information on the features available as part of this FDK version, see https://developers.freshworks.com/docs/?tab=modules."}},"addon":{"version":"2.2.1","url":"https://cdn.freshdev.io/assets/fdk/addons/addon.zip"}},"last_updated":{"time_stamp":1759549121430}}
+2025-10-05 19:24:02.758 +0530 [debug] (data.js) Read {"version_details":{"cli":{"deprecated":{"version":"<9","message":"This FDK version has been deprecated. There will be no further feature updates to this version. For a seamless app-building experience, ensure to move to the latest FDK version. For more information, see https://developers.freshworks.com/docs/app-sdk/v2.3/freshdesk/migration-guide/#migrate-to-the-latest-platform-version."},"forced":{"version":"7.0.0","command":"npm install https://dl.freshdev.io/cli/fdk-7.0.0.tgz -g","message":"Your FDK version has been forced updated to v7.0.0, please visit https://community.developers.freshworks.com/t/fdk-v7-0-announcing-node-js-v12-and-es6-support/3606 to know more"},"latest":{"version":"9.7.0","command":"npm install https://cdn.freshdev.io/fdk/latest.tgz -g","message":"You are on the latest FDK version. For information on the features available as part of this FDK version, see https://developers.freshworks.com/docs/?tab=modules."}},"addon":{"version":"2.2.1","url":"https://cdn.freshdev.io/assets/fdk/addons/addon.zip"}},"last_updated":{"time_stamp":1759549121430}}
+2025-10-05 19:24:02.760 +0530 [debug] (data.js) Read {"version_details":{"cli":{"deprecated":{"version":"<9","message":"This FDK version has been deprecated. There will be no further feature updates to this version. For a seamless app-building experience, ensure to move to the latest FDK version. For more information, see https://developers.freshworks.com/docs/app-sdk/v2.3/freshdesk/migration-guide/#migrate-to-the-latest-platform-version."},"forced":{"version":"7.0.0","command":"npm install https://dl.freshdev.io/cli/fdk-7.0.0.tgz -g","message":"Your FDK version has been forced updated to v7.0.0, please visit https://community.developers.freshworks.com/t/fdk-v7-0-announcing-node-js-v12-and-es6-support/3606 to know more"},"latest":{"version":"9.7.0","command":"npm install https://cdn.freshdev.io/fdk/latest.tgz -g","message":"You are on the latest FDK version. For information on the features available as part of this FDK version, see https://developers.freshworks.com/docs/?tab=modules."}},"addon":{"version":"2.2.1","url":"https://cdn.freshdev.io/assets/fdk/addons/addon.zip"}},"last_updated":{"time_stamp":1759549121430}}
+2025-10-05 19:24:02.765 +0530 [debug] (index.js) running with opts {}
+2025-10-05 19:24:03.097 +0530 [debug] (data.js) Read {"version_details":{"cli":{"deprecated":{"version":"<9","message":"This FDK version has been deprecated. There will be no further feature updates to this version. For a seamless app-building experience, ensure to move to the latest FDK version. For more information, see https://developers.freshworks.com/docs/app-sdk/v2.3/freshdesk/migration-guide/#migrate-to-the-latest-platform-version."},"forced":{"version":"7.0.0","command":"npm install https://dl.freshdev.io/cli/fdk-7.0.0.tgz -g","message":"Your FDK version has been forced updated to v7.0.0, please visit https://community.developers.freshworks.com/t/fdk-v7-0-announcing-node-js-v12-and-es6-support/3606 to know more"},"latest":{"version":"9.7.0","command":"npm install https://cdn.freshdev.io/fdk/latest.tgz -g","message":"You are on the latest FDK version. For information on the features available as part of this FDK version, see https://developers.freshworks.com/docs/?tab=modules."}},"addon":{"version":"2.2.1","url":"https://cdn.freshdev.io/assets/fdk/addons/addon.zip"}},"last_updated":{"time_stamp":1759672442759}}
+2025-10-05 19:24:03.102 +0530 [debug] (manifest.js) Reloading manifest with {"platform-version":"2.3","product":{"freshdesk":{"location":{"ticket_sidebar":{"url":"index.html","icon":"styles/images/icon.svg"}}}},"engines":{"node":"18.12.1","fdk":"9.7.0"}}.
+2025-10-05 19:24:03.102 +0530 [debug] (manifest.js) Inferred db,backend as features.
+2025-10-05 19:24:03.204 +0530 [debug] (data.js) Read {"version_details":{"cli":{"deprecated":{"version":"<9","message":"This FDK version has been deprecated. There will be no further feature updates to this version. For a seamless app-building experience, ensure to move to the latest FDK version. For more information, see https://developers.freshworks.com/docs/app-sdk/v2.3/freshdesk/migration-guide/#migrate-to-the-latest-platform-version."},"forced":{"version":"7.0.0","command":"npm install https://dl.freshdev.io/cli/fdk-7.0.0.tgz -g","message":"Your FDK version has been forced updated to v7.0.0, please visit https://community.developers.freshworks.com/t/fdk-v7-0-announcing-node-js-v12-and-es6-support/3606 to know more"},"latest":{"version":"9.7.0","command":"npm install https://cdn.freshdev.io/fdk/latest.tgz -g","message":"You are on the latest FDK version. For information on the features available as part of this FDK version, see https://developers.freshworks.com/docs/?tab=modules."}},"addon":{"version":"2.2.1","url":"https://cdn.freshdev.io/assets/fdk/addons/addon.zip"}},"last_updated":{"time_stamp":1759672442759}}
+2025-10-05 19:24:03.957 +0530 [debug] (index.js) loading model at "C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\models\bigint-pivot.js"
+2025-10-05 19:24:03.961 +0530 [debug] (index.js) loading model at "C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\models\entity-field-choice.js"
+2025-10-05 19:24:03.962 +0530 [debug] (index.js) loading model at "C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\models\entity-field.js"
+2025-10-05 19:24:03.964 +0530 [debug] (index.js) loading model at "C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\models\entity.js"
+2025-10-05 19:24:03.966 +0530 [debug] (index.js) loading model at "C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\models\files.js"
+2025-10-05 19:24:03.968 +0530 [debug] (index.js) loading model at "C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\models\oauth-details.js"
+2025-10-05 19:24:03.970 +0530 [debug] (index.js) loading model at "C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\models\record.js"
+2025-10-05 19:24:03.975 +0530 [debug] (index.js) loading model at "C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\models\string-pivot.js"
+2025-10-05 19:24:04.265 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:24:04.281 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:24:04.283 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:24:04.284 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:24:04.288 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:24:04.291 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:24:04.293 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:24:04.302 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:24:04.303 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:24:04.304 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:24:04.310 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:24:04.314 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:24:04.319 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:24:04.320 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:24:04.321 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:24:04.329 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:24:04.333 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:24:04.351 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:24:05.798 +0530 [debug] (data.js) Read {"version_details":{"cli":{"deprecated":{"version":"<9","message":"This FDK version has been deprecated. There will be no further feature updates to this version. For a seamless app-building experience, ensure to move to the latest FDK version. For more information, see https://developers.freshworks.com/docs/app-sdk/v2.3/freshdesk/migration-guide/#migrate-to-the-latest-platform-version."},"forced":{"version":"7.0.0","command":"npm install https://dl.freshdev.io/cli/fdk-7.0.0.tgz -g","message":"Your FDK version has been forced updated to v7.0.0, please visit https://community.developers.freshworks.com/t/fdk-v7-0-announcing-node-js-v12-and-es6-support/3606 to know more"},"latest":{"version":"9.7.0","command":"npm install https://cdn.freshdev.io/fdk/latest.tgz -g","message":"You are on the latest FDK version. For information on the features available as part of this FDK version, see https://developers.freshworks.com/docs/?tab=modules."}},"addon":{"version":"2.2.1","url":"https://cdn.freshdev.io/assets/fdk/addons/addon.zip"}},"last_updated":{"time_stamp":1759672442759}}
+2025-10-05 19:24:07.867 +0530 [debug] (validate.js) asked to skip the following validations, 
+2025-10-05 19:24:07.867 +0530 [debug] (validate.js) running validator actions
+2025-10-05 19:24:07.868 +0530 [debug] (validate.js) running validator requests
+2025-10-05 19:24:07.868 +0530 [debug] (validate.js) running validator app-dir
+2025-10-05 19:24:07.869 +0530 [debug] (validate.js) running validator config-dir
+2025-10-05 19:24:07.869 +0530 [debug] (config-dir.js) Checking to see if C:\Users\srini\Desktop\shopeasy-freshdesk-orders-app/config/ exists.
+2025-10-05 19:24:07.869 +0530 [debug] (config-dir.js) Fetched the following config files assets,iparams.json
+2025-10-05 19:24:07.869 +0530 [debug] (validate.js) running validator custom-objects
+2025-10-05 19:24:07.870 +0530 [debug] (validate.js) running validator event
+2025-10-05 19:24:07.888 +0530 [debug] (event.js) Found ["onTicketCreateHandler","getOrderHistory","testMethod"] as exported functions.
+2025-10-05 19:24:07.888 +0530 [debug] (validate.js) running validator iparam
+2025-10-05 19:24:07.893 +0530 [debug] (validate.js) running validator lint
+2025-10-05 19:24:07.893 +0530 [debug] (lint.js) passed fix flag: undefined
+2025-10-05 19:24:07.904 +0530 [debug] (lint.js) Running the following lints on the file app\scripts\app.js : no-eval,no-alert,no-debugger,no-unreachable,no-duplicate-imports,constructor-super,for-direction,no-class-assign,no-new-native-nonconstructor,valid-typeof,no-eq-null,no-var,require-await,no-unreachable-loop,no-redeclare,no-self-assign,no-setter-return,no-shadow-restricted-names,no-this-before-super,no-unsafe-finally,no-unsafe-optional-chaining,no-unused-vars,no-useless-catch,eqeqeq,prefer-const,require-yield,no-global-assign,no-caller,no-process-env,complexity,max-nested-callbacks,handle-callback-err,getter-return,no-async-promise-executor,no-case-declarations,no-compare-neg-zero,no-cond-assign,no-const-assign,no-constant-condition,no-control-regex,no-delete-var,no-dupe-args,no-dupe-class-members,no-dupe-else-if,no-dupe-keys,no-duplicate-case,no-empty,no-empty-character-class,no-empty-pattern,no-ex-assign,no-extra-boolean-cast,no-extra-semi,no-fallthrough,no-func-assign,no-import-assign,no-inner-declarations,no-invalid-regexp,no-irregular-whitespace,no-loss-of-precision,no-misleading-character-class,no-mixed-spaces-and-tabs,no-nonoctal-decimal-escape,no-obj-calls,no-octal,no-prototype-builtins,no-regex-spaces,no-sparse-arrays,no-unexpected-multiline,no-unsafe-negation,no-unused-labels,no-useless-backreference,no-useless-escape,no-with,use-isnan,no-unpkg-cdn,no-proxy-requests,no-unhandled-promise,no-logging-rejections,no-non-client-request-model,no-deprecated-apis,no-cross-scope-assign,no-empty-function
+2025-10-05 19:24:08.167 +0530 [debug] (lint.js) Running the following lints on the file server\lib\handle-response.js : no-eval,no-alert,no-debugger,no-unreachable,no-duplicate-imports,constructor-super,for-direction,no-class-assign,no-new-native-nonconstructor,valid-typeof,no-eq-null,no-var,require-await,no-unreachable-loop,no-redeclare,no-self-assign,no-setter-return,no-shadow-restricted-names,no-this-before-super,no-unsafe-finally,no-unsafe-optional-chaining,no-unused-vars,no-useless-catch,eqeqeq,prefer-const,require-yield,no-global-assign,no-caller,no-process-env,complexity,max-nested-callbacks,handle-callback-err,getter-return,no-async-promise-executor,no-case-declarations,no-compare-neg-zero,no-cond-assign,no-const-assign,no-constant-condition,no-control-regex,no-delete-var,no-dupe-args,no-dupe-class-members,no-dupe-else-if,no-dupe-keys,no-duplicate-case,no-empty,no-empty-character-class,no-empty-pattern,no-ex-assign,no-extra-boolean-cast,no-extra-semi,no-fallthrough,no-func-assign,no-import-assign,no-inner-declarations,no-invalid-regexp,no-irregular-whitespace,no-loss-of-precision,no-misleading-character-class,no-mixed-spaces-and-tabs,no-nonoctal-decimal-escape,no-obj-calls,no-octal,no-prototype-builtins,no-regex-spaces,no-sparse-arrays,no-unexpected-multiline,no-unsafe-negation,no-unused-labels,no-useless-backreference,no-useless-escape,no-with,use-isnan,no-unpkg-cdn,no-proxy-requests,no-unhandled-promise,no-logging-rejections,no-non-client-request-model,no-deprecated-apis,no-dependency-mismatch,no-empty-function
+2025-10-05 19:24:08.174 +0530 [debug] (lint.js) Running the following lints on the file server\server.js : no-eval,no-alert,no-debugger,no-unreachable,no-duplicate-imports,constructor-super,for-direction,no-class-assign,no-new-native-nonconstructor,valid-typeof,no-eq-null,no-var,require-await,no-unreachable-loop,no-redeclare,no-self-assign,no-setter-return,no-shadow-restricted-names,no-this-before-super,no-unsafe-finally,no-unsafe-optional-chaining,no-unused-vars,no-useless-catch,eqeqeq,prefer-const,require-yield,no-global-assign,no-caller,no-process-env,complexity,max-nested-callbacks,handle-callback-err,getter-return,no-async-promise-executor,no-case-declarations,no-compare-neg-zero,no-cond-assign,no-const-assign,no-constant-condition,no-control-regex,no-delete-var,no-dupe-args,no-dupe-class-members,no-dupe-else-if,no-dupe-keys,no-duplicate-case,no-empty,no-empty-character-class,no-empty-pattern,no-ex-assign,no-extra-boolean-cast,no-extra-semi,no-fallthrough,no-func-assign,no-import-assign,no-inner-declarations,no-invalid-regexp,no-irregular-whitespace,no-loss-of-precision,no-misleading-character-class,no-mixed-spaces-and-tabs,no-nonoctal-decimal-escape,no-obj-calls,no-octal,no-prototype-builtins,no-regex-spaces,no-sparse-arrays,no-unexpected-multiline,no-unsafe-negation,no-unused-labels,no-useless-backreference,no-useless-escape,no-with,use-isnan,no-unpkg-cdn,no-proxy-requests,no-unhandled-promise,no-logging-rejections,no-non-client-request-model,no-deprecated-apis,no-dependency-mismatch,no-empty-function
+2025-10-05 19:24:08.198 +0530 [debug] (lint.js) Running the following lints on the file config\assets\iparams.js : no-unpkg-cdn,no-proxy-requests,no-logging-rejections
+2025-10-05 19:24:08.214 +0530 [debug] (validate.js) running validator manifest
+2025-10-05 19:24:08.214 +0530 [debug] (validate.js) skipping validator manifest-dependency
+2025-10-05 19:24:08.214 +0530 [debug] (validate.js) running validator oauth
+2025-10-05 19:24:08.215 +0530 [debug] (validate.js) skipping validator pkgsize
+2025-10-05 19:24:08.215 +0530 [debug] (validate.js) running validator schema
+2025-10-05 19:24:08.215 +0530 [debug] (validate.js) running validator version-check
+2025-10-05 19:24:08.216 +0530 [info] Node.js version mismatch. App was developed in 18.12.1 and is being run in 18.20.8.
+2025-10-05 19:24:08.216 +0530 [info] Node.js version in manifest is being updated to the current version.
+2025-10-05 19:24:08.217 +0530 [debug] (version-check.js) about to modify Node.js version in manifest
+2025-10-05 19:24:08.219 +0530 [debug] (manifest.js) Reloading manifest with {"platform-version":"2.3","product":{"freshdesk":{"location":{"ticket_sidebar":{"url":"index.html","icon":"styles/images/icon.svg"}}}},"engines":{"node":"18.20.8","fdk":"9.7.0"}}.
+2025-10-05 19:24:08.219 +0530 [debug] (manifest.js) Inferred db,backend as features.
+2025-10-05 19:24:08.219 +0530 [debug] (validate.js) running validator app-settings
+2025-10-05 19:24:08.227 +0530 [warn] Please ensure that the following are addressed for quick review process:
+2025-10-05 19:24:08.228 +0530 [warn] [33m‼[39m app\scripts\app.js::28: Async function 'loadOrderHistory' has a complexity of 13. Maximum allowed is 7.
+2025-10-05 19:24:08.228 +0530 [warn] 
+2025-10-05 19:24:08.229 +0530 [debug] (watcher.js) Preparing to watch the following files ./app,./config,./manifest.json
+2025-10-05 19:24:08.236 +0530 [debug] (install.js) dependency installer called with {}
+2025-10-05 19:24:08.237 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:24:08.238 +0530 [debug] (custom-objects.js) to force or not? undefined
+2025-10-05 19:24:08.238 +0530 [debug] (custom-objects.js) beginning to re-sync db
+2025-10-05 19:24:08.620 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:24:08.621 +0530 [debug] (custom-objects.js) updated local store with latest entity hash
+2025-10-05 19:24:08.621 +0530 [debug] (run.js) migrate stored oauth configs from localstore to sqlite
+2025-10-05 19:24:08.622 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:24:08.623 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:24:08.623 +0530 [debug] (oauth.js) migration completed, returning
+2025-10-05 19:24:08.623 +0530 [info] Starting local testing server at http://*:10001/    
+Append 'dev=true' to your Freshdesk account URL to start testing    
+e.g. https://domain.freshdesk.com/a/tickets/1?dev=true    
+Quit the server with Control-C.
+2025-10-05 19:24:08.624 +0530 [info] 
+To test the installation page, visit - http://localhost:10001/custom_configs
+2025-10-05 19:24:08.624 +0530 [info] 
+To simulate product, app setup, and external events, visit - http://localhost:10001/web/test
+2025-10-05 19:24:08.624 +0530 [info] Populating test data with events found in the app
+2025-10-05 19:25:31.228 +0530 [debug] (oauth.js) Fetching oauth configs of product : freshdesk
+2025-10-05 19:25:31.228 +0530 [debug] (iframe.js) Checking is authorized for all oauths 
+2025-10-05 19:25:31.230 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:25:31.232 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:25:31.232 +0530 [debug] (iframe.js) Responding to product with {"configs":{},"displayName":"shopeasy-freshdesk-orders-app","product":{"freshdesk":{"location":{"ticket_sidebar":{"url":"agent/index.html","icon":"agent/styles/images/icon.svg"}}}},"modules":{},"features":["db","backend"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.3","isInstall":true,"oauth_configs_list":[],"isAuthorized":true,"v2":[]}
+2025-10-05 19:25:31.629 +0530 [debug] (oauth.js) Fetching oauth configs of product : freshdesk
+2025-10-05 19:25:31.629 +0530 [debug] (iframe.js) Checking is authorized for all oauths 
+2025-10-05 19:25:31.630 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:25:31.632 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:25:31.632 +0530 [debug] (iframe.js) Responding to product with {"configs":{},"displayName":"shopeasy-freshdesk-orders-app","product":{"freshdesk":{"location":{"ticket_sidebar":{"url":"agent/index.html","icon":"agent/styles/images/icon.svg"}}}},"modules":{},"features":["db","backend"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.3","isInstall":true,"oauth_configs_list":[],"isAuthorized":true,"v2":[]}
+2025-10-05 19:25:31.937 +0530 [debug] (oauth.js) Fetching oauth configs of product : freshdesk
+2025-10-05 19:25:31.937 +0530 [debug] (iframe.js) Checking is authorized for all oauths 
+2025-10-05 19:25:31.938 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:25:31.940 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:25:31.940 +0530 [debug] (iframe.js) Responding to product with {"configs":{},"displayName":"shopeasy-freshdesk-orders-app","product":{"freshdesk":{"location":{"ticket_sidebar":{"url":"agent/index.html","icon":"agent/styles/images/icon.svg"}}}},"modules":{},"features":["db","backend"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.3","isInstall":true,"oauth_configs_list":[],"isAuthorized":true,"v2":[]}
+2025-10-05 19:25:31.981 +0530 [debug] (oauth.js) Fetching oauth configs of product : freshdesk
+2025-10-05 19:25:31.981 +0530 [debug] (iframe.js) Checking is authorized for all oauths 
+2025-10-05 19:25:31.982 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:25:31.983 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:25:31.983 +0530 [debug] (iframe.js) Responding to product with {"configs":{},"displayName":"shopeasy-freshdesk-orders-app","product":{"freshdesk":{"location":{"ticket_sidebar":{"url":"agent/index.html","icon":"agent/styles/images/icon.svg"}}}},"modules":{},"features":["db","backend"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.3","isInstall":true,"oauth_configs_list":[],"isAuthorized":true,"v2":[]}
+2025-10-05 19:25:32.043 +0530 [debug] (oauth.js) Fetching oauth configs of product : freshdesk
+2025-10-05 19:25:32.043 +0530 [debug] (iframe.js) Checking is authorized for all oauths 
+2025-10-05 19:25:32.044 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:25:32.045 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:25:32.045 +0530 [debug] (iframe.js) Responding to product with {"configs":{},"displayName":"shopeasy-freshdesk-orders-app","product":{"freshdesk":{"location":{"ticket_sidebar":{"url":"agent/index.html","icon":"agent/styles/images/icon.svg"}}}},"modules":{},"features":["db","backend"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.3","isInstall":true,"oauth_configs_list":[],"isAuthorized":true,"v2":[]}
+2025-10-05 19:25:32.085 +0530 [debug] (oauth.js) Fetching oauth configs of product : freshdesk
+2025-10-05 19:25:32.085 +0530 [debug] (iframe.js) Checking is authorized for all oauths 
+2025-10-05 19:25:32.086 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:25:32.087 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:25:32.087 +0530 [debug] (iframe.js) Responding to product with {"configs":{},"displayName":"shopeasy-freshdesk-orders-app","product":{"freshdesk":{"location":{"ticket_sidebar":{"url":"agent/index.html","icon":"agent/styles/images/icon.svg"}}}},"modules":{},"features":["db","backend"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.3","isInstall":true,"oauth_configs_list":[],"isAuthorized":true,"v2":[]}
+2025-10-05 19:25:32.128 +0530 [debug] (oauth.js) Fetching oauth configs of product : freshdesk
+2025-10-05 19:25:32.128 +0530 [debug] (iframe.js) Checking is authorized for all oauths 
+2025-10-05 19:25:32.129 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:25:32.130 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:25:32.130 +0530 [debug] (iframe.js) Responding to product with {"configs":{},"displayName":"shopeasy-freshdesk-orders-app","product":{"freshdesk":{"location":{"ticket_sidebar":{"url":"agent/index.html","icon":"agent/styles/images/icon.svg"}}}},"modules":{},"features":["db","backend"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.3","isInstall":true,"oauth_configs_list":[],"isAuthorized":true,"v2":[]}
+2025-10-05 19:25:32.170 +0530 [debug] (oauth.js) Fetching oauth configs of product : freshdesk
+2025-10-05 19:25:32.170 +0530 [debug] (iframe.js) Checking is authorized for all oauths 
+2025-10-05 19:25:32.171 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:25:32.173 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:25:32.173 +0530 [debug] (iframe.js) Responding to product with {"configs":{},"displayName":"shopeasy-freshdesk-orders-app","product":{"freshdesk":{"location":{"ticket_sidebar":{"url":"agent/index.html","icon":"agent/styles/images/icon.svg"}}}},"modules":{},"features":["db","backend"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.3","isInstall":true,"oauth_configs_list":[],"isAuthorized":true,"v2":[]}
+2025-10-05 19:25:32.214 +0530 [debug] (oauth.js) Fetching oauth configs of product : freshdesk
+2025-10-05 19:25:32.214 +0530 [debug] (iframe.js) Checking is authorized for all oauths 
+2025-10-05 19:25:32.215 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:25:32.216 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:25:32.216 +0530 [debug] (iframe.js) Responding to product with {"configs":{},"displayName":"shopeasy-freshdesk-orders-app","product":{"freshdesk":{"location":{"ticket_sidebar":{"url":"agent/index.html","icon":"agent/styles/images/icon.svg"}}}},"modules":{},"features":["db","backend"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.3","isInstall":true,"oauth_configs_list":[],"isAuthorized":true,"v2":[]}
+2025-10-05 19:25:32.236 +0530 [debug] (iframe.js) Responding with contents of /index.html
+2025-10-05 19:25:32.358 +0530 [debug] (iframe.js) Responding with contents of /scripts/app.js
+2025-10-05 19:25:32.359 +0530 [debug] (coverage.js) Instrumenting C:\Users\srini\Desktop\shopeasy-freshdesk-orders-app\app\scripts\app.js
+2025-10-05 19:25:34.733 +0530 [debug] (data-pipe.js) received call for route "smi" with action "invoke" and body {"action":"invoke","methodName":"testMethod","methodParams":{"test":"hello"}}
+2025-10-05 19:25:34.736 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:25:34.744 +0530 [debug] (error.js) uncaught exception while handling web request "FunctionNotFoundError: Requested function 'testMethod' not found or registered
+    at getFunctionDetails (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\api\smi.js:42:11)
+    at Object.invoke (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\api\smi.js:69:7)
+    at dpRouterExec (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\routes\data-pipe.js:42:32)
+    at asyncify (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\utils\helper.js:161:28)
+    at Layer.handle [as handle_request] (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:280:10)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\middlewares\validator.js:16:32
+    at asyncify (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\utils\helper.js:161:28)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\routes\data-pipe.js:55:82
+    at Layer.handle [as handle_request] (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:346:12)
+    at Immediate.next (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:646:15)
+    at process.processImmediate (node:internal/timers:478:21)"
+2025-10-05 19:25:34.977 +0530 [debug] (coverage.js) Writing coverage.
+2025-10-05 19:25:35.048 +0530 [debug] (data-pipe.js) received call for route "smi" with action "invoke" and body {"action":"invoke","methodName":"testMethod","methodParams":{"test":"hello"}}
+2025-10-05 19:25:35.050 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:25:35.050 +0530 [debug] (error.js) uncaught exception while handling web request "FunctionNotFoundError: Requested function 'testMethod' not found or registered
+    at getFunctionDetails (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\api\smi.js:42:11)
+    at Object.invoke (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\api\smi.js:69:7)
+    at dpRouterExec (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\routes\data-pipe.js:42:32)
+    at asyncify (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\utils\helper.js:161:28)
+    at Layer.handle [as handle_request] (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:280:10)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\middlewares\validator.js:16:32
+    at asyncify (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\utils\helper.js:161:28)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\routes\data-pipe.js:55:82
+    at Layer.handle [as handle_request] (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:346:12)
+    at Immediate.next (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:646:15)
+    at process.processImmediate (node:internal/timers:478:21)"
+2025-10-05 19:25:36.958 +0530 [debug] (coverage.js) Writing coverage.
+2025-10-05 19:28:11.111 +0530 [debug] (oauth.js) Fetching oauth configs of product : freshdesk
+2025-10-05 19:28:11.112 +0530 [debug] (iframe.js) Checking is authorized for all oauths 
+2025-10-05 19:28:11.113 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:28:11.114 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:28:11.114 +0530 [debug] (iframe.js) Responding to product with {"configs":{},"displayName":"shopeasy-freshdesk-orders-app","product":{"freshdesk":{"location":{"ticket_sidebar":{"url":"agent/index.html","icon":"agent/styles/images/icon.svg"}}}},"modules":{},"features":["db","backend"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.3","isInstall":true,"oauth_configs_list":[],"isAuthorized":true,"v2":[]}
+2025-10-05 19:28:11.493 +0530 [debug] (oauth.js) Fetching oauth configs of product : freshdesk
+2025-10-05 19:28:11.493 +0530 [debug] (iframe.js) Checking is authorized for all oauths 
+2025-10-05 19:28:11.494 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:28:11.495 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:28:11.495 +0530 [debug] (iframe.js) Responding to product with {"configs":{},"displayName":"shopeasy-freshdesk-orders-app","product":{"freshdesk":{"location":{"ticket_sidebar":{"url":"agent/index.html","icon":"agent/styles/images/icon.svg"}}}},"modules":{},"features":["db","backend"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.3","isInstall":true,"oauth_configs_list":[],"isAuthorized":true,"v2":[]}
+2025-10-05 19:28:11.671 +0530 [debug] (oauth.js) Fetching oauth configs of product : freshdesk
+2025-10-05 19:28:11.671 +0530 [debug] (iframe.js) Checking is authorized for all oauths 
+2025-10-05 19:28:11.672 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:28:11.673 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:28:11.673 +0530 [debug] (iframe.js) Responding to product with {"configs":{},"displayName":"shopeasy-freshdesk-orders-app","product":{"freshdesk":{"location":{"ticket_sidebar":{"url":"agent/index.html","icon":"agent/styles/images/icon.svg"}}}},"modules":{},"features":["db","backend"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.3","isInstall":true,"oauth_configs_list":[],"isAuthorized":true,"v2":[]}
+2025-10-05 19:28:11.748 +0530 [debug] (oauth.js) Fetching oauth configs of product : freshdesk
+2025-10-05 19:28:11.748 +0530 [debug] (iframe.js) Checking is authorized for all oauths 
+2025-10-05 19:28:11.749 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:28:11.750 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:28:11.750 +0530 [debug] (iframe.js) Responding to product with {"configs":{},"displayName":"shopeasy-freshdesk-orders-app","product":{"freshdesk":{"location":{"ticket_sidebar":{"url":"agent/index.html","icon":"agent/styles/images/icon.svg"}}}},"modules":{},"features":["db","backend"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.3","isInstall":true,"oauth_configs_list":[],"isAuthorized":true,"v2":[]}
+2025-10-05 19:28:11.845 +0530 [debug] (oauth.js) Fetching oauth configs of product : freshdesk
+2025-10-05 19:28:11.845 +0530 [debug] (iframe.js) Checking is authorized for all oauths 
+2025-10-05 19:28:11.845 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:28:11.847 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:28:11.847 +0530 [debug] (iframe.js) Responding to product with {"configs":{},"displayName":"shopeasy-freshdesk-orders-app","product":{"freshdesk":{"location":{"ticket_sidebar":{"url":"agent/index.html","icon":"agent/styles/images/icon.svg"}}}},"modules":{},"features":["db","backend"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.3","isInstall":true,"oauth_configs_list":[],"isAuthorized":true,"v2":[]}
+2025-10-05 19:28:11.929 +0530 [debug] (oauth.js) Fetching oauth configs of product : freshdesk
+2025-10-05 19:28:11.929 +0530 [debug] (iframe.js) Checking is authorized for all oauths 
+2025-10-05 19:28:11.930 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:28:11.931 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:28:11.931 +0530 [debug] (iframe.js) Responding to product with {"configs":{},"displayName":"shopeasy-freshdesk-orders-app","product":{"freshdesk":{"location":{"ticket_sidebar":{"url":"agent/index.html","icon":"agent/styles/images/icon.svg"}}}},"modules":{},"features":["db","backend"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.3","isInstall":true,"oauth_configs_list":[],"isAuthorized":true,"v2":[]}
+2025-10-05 19:28:12.013 +0530 [debug] (oauth.js) Fetching oauth configs of product : freshdesk
+2025-10-05 19:28:12.013 +0530 [debug] (iframe.js) Checking is authorized for all oauths 
+2025-10-05 19:28:12.014 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:28:12.015 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:28:12.015 +0530 [debug] (iframe.js) Responding to product with {"configs":{},"displayName":"shopeasy-freshdesk-orders-app","product":{"freshdesk":{"location":{"ticket_sidebar":{"url":"agent/index.html","icon":"agent/styles/images/icon.svg"}}}},"modules":{},"features":["db","backend"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.3","isInstall":true,"oauth_configs_list":[],"isAuthorized":true,"v2":[]}
+2025-10-05 19:28:12.097 +0530 [debug] (oauth.js) Fetching oauth configs of product : freshdesk
+2025-10-05 19:28:12.097 +0530 [debug] (iframe.js) Checking is authorized for all oauths 
+2025-10-05 19:28:12.098 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:28:12.099 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:28:12.099 +0530 [debug] (iframe.js) Responding to product with {"configs":{},"displayName":"shopeasy-freshdesk-orders-app","product":{"freshdesk":{"location":{"ticket_sidebar":{"url":"agent/index.html","icon":"agent/styles/images/icon.svg"}}}},"modules":{},"features":["db","backend"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.3","isInstall":true,"oauth_configs_list":[],"isAuthorized":true,"v2":[]}
+2025-10-05 19:28:12.181 +0530 [debug] (oauth.js) Fetching oauth configs of product : freshdesk
+2025-10-05 19:28:12.181 +0530 [debug] (iframe.js) Checking is authorized for all oauths 
+2025-10-05 19:28:12.181 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:28:12.182 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:28:12.183 +0530 [debug] (iframe.js) Responding to product with {"configs":{},"displayName":"shopeasy-freshdesk-orders-app","product":{"freshdesk":{"location":{"ticket_sidebar":{"url":"agent/index.html","icon":"agent/styles/images/icon.svg"}}}},"modules":{},"features":["db","backend"],"actions":false,"omni":false,"products":["freshdesk"],"platform":"2.3","isInstall":true,"oauth_configs_list":[],"isAuthorized":true,"v2":[]}
+2025-10-05 19:28:12.199 +0530 [debug] (iframe.js) Responding with contents of /index.html
+2025-10-05 19:28:12.279 +0530 [debug] (iframe.js) Responding with contents of /scripts/app.js
+2025-10-05 19:28:12.280 +0530 [debug] (coverage.js) Instrumenting C:\Users\srini\Desktop\shopeasy-freshdesk-orders-app\app\scripts\app.js
+2025-10-05 19:28:14.657 +0530 [debug] (data-pipe.js) received call for route "smi" with action "invoke" and body {"action":"invoke","methodName":"testMethod","methodParams":{"test":"hello"}}
+2025-10-05 19:28:14.660 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:28:14.661 +0530 [debug] (error.js) uncaught exception while handling web request "FunctionNotFoundError: Requested function 'testMethod' not found or registered
+    at getFunctionDetails (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\api\smi.js:42:11)
+    at Object.invoke (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\api\smi.js:69:7)
+    at dpRouterExec (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\routes\data-pipe.js:42:32)
+    at asyncify (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\utils\helper.js:161:28)
+    at Layer.handle [as handle_request] (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:280:10)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\middlewares\validator.js:16:32
+    at asyncify (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\utils\helper.js:161:28)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\routes\data-pipe.js:55:82
+    at Layer.handle [as handle_request] (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:346:12)
+    at Immediate.next (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:646:15)
+    at process.processImmediate (node:internal/timers:478:21)"
+2025-10-05 19:28:15.125 +0530 [debug] (coverage.js) Writing coverage.
+2025-10-05 19:28:15.303 +0530 [debug] (data-pipe.js) received call for route "smi" with action "invoke" and body {"action":"invoke","methodName":"testMethod","methodParams":{"test":"hello"}}
+2025-10-05 19:28:15.305 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:28:15.306 +0530 [debug] (error.js) uncaught exception while handling web request "FunctionNotFoundError: Requested function 'testMethod' not found or registered
+    at getFunctionDetails (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\api\smi.js:42:11)
+    at Object.invoke (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\api\smi.js:69:7)
+    at dpRouterExec (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\routes\data-pipe.js:42:32)
+    at asyncify (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\utils\helper.js:161:28)
+    at Layer.handle [as handle_request] (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:280:10)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\middlewares\validator.js:16:32
+    at asyncify (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\utils\helper.js:161:28)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\routes\data-pipe.js:55:82
+    at Layer.handle [as handle_request] (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:346:12)
+    at Immediate.next (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:646:15)
+    at process.processImmediate (node:internal/timers:478:21)"
+2025-10-05 19:28:16.446 +0530 [debug] (coverage.js) Writing coverage.
+2025-10-05 19:28:16.569 +0530 [debug] (data-pipe.js) received call for route "smi" with action "invoke" and body {"action":"invoke","methodName":"testMethod","methodParams":{"test":"hello"}}
+2025-10-05 19:28:16.570 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:28:16.571 +0530 [debug] (error.js) uncaught exception while handling web request "FunctionNotFoundError: Requested function 'testMethod' not found or registered
+    at getFunctionDetails (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\api\smi.js:42:11)
+    at Object.invoke (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\api\smi.js:69:7)
+    at dpRouterExec (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\routes\data-pipe.js:42:32)
+    at asyncify (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\utils\helper.js:161:28)
+    at Layer.handle [as handle_request] (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:280:10)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\middlewares\validator.js:16:32
+    at asyncify (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\utils\helper.js:161:28)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\routes\data-pipe.js:55:82
+    at Layer.handle [as handle_request] (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:346:12)
+    at Immediate.next (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:646:15)
+    at process.processImmediate (node:internal/timers:478:21)"
+2025-10-05 19:28:18.448 +0530 [debug] (coverage.js) Writing coverage.
+2025-10-05 19:40:53.165 +0530 [debug] (manifest.js) Reloading manifest with {"platform-version":"2.3","product":{"freshdesk":{"location":{"portal_ticket_sidebar":{"url":"index.html","icon":"styles/images/icon.svg"}}}},"engines":{"node":"18.20.8","fdk":"9.7.0"}}.
+2025-10-05 19:40:53.166 +0530 [debug] (manifest.js) Inferred db,backend as features.
+2025-10-05 19:40:53.168 +0530 [debug] (watcher.js) Broadcasted "{"file":"manifest.json"}" to all listeners.
+2025-10-05 19:40:53.179 +0530 [debug] (iframe.js) Responding with contents of /index.html
+2025-10-05 19:40:53.308 +0530 [debug] (iframe.js) Responding with contents of /scripts/app.js
+2025-10-05 19:40:53.309 +0530 [debug] (coverage.js) Instrumenting C:\Users\srini\Desktop\shopeasy-freshdesk-orders-app\app\scripts\app.js
+2025-10-05 19:40:55.736 +0530 [debug] (data-pipe.js) received call for route "smi" with action "invoke" and body {"action":"invoke","methodName":"testMethod","methodParams":{"test":"hello"}}
+2025-10-05 19:40:55.738 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:40:55.738 +0530 [debug] (error.js) uncaught exception while handling web request "FunctionNotFoundError: Requested function 'testMethod' not found or registered
+    at getFunctionDetails (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\api\smi.js:42:11)
+    at Object.invoke (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\api\smi.js:69:7)
+    at dpRouterExec (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\routes\data-pipe.js:42:32)
+    at asyncify (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\utils\helper.js:161:28)
+    at Layer.handle [as handle_request] (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:280:10)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\middlewares\validator.js:16:32
+    at asyncify (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\utils\helper.js:161:28)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\routes\data-pipe.js:55:82
+    at Layer.handle [as handle_request] (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:346:12)
+    at Immediate.next (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:646:15)
+    at process.processImmediate (node:internal/timers:478:21)"
+2025-10-05 19:40:56.349 +0530 [debug] (coverage.js) Writing coverage.
+2025-10-05 19:43:12.091 +0530 [debug] (configs.js) loaded default configs as "{"updates":{"manifest_url":"https://cdn.freshdev.io/assets/fdk/updates.json","period":24},"log":{"level":"info"},"javascript":{"ecma_version":2020},"request":{"timeout":15000},"global_apps":{"enabled":true},"easel":{"enabled":false},"job":{"timeout":120000}}"
+2025-10-05 19:43:12.094 +0530 [debug] (configs.js) loaded global configs as "{"global_apps":{"enabled":"false"},"request":{"timeout":15000},"job":{"timeout":120000}}"
+2025-10-05 19:43:12.094 +0530 [debug] (configs.js) loaded local configs as "{"request":{"timeout":15000},"job":{"timeout":120000},"global_apps":{"enabled":"false"}}"
+2025-10-05 19:43:12.095 +0530 [debug] (configs.js) loaded env configs as "{"updates":{},"log":{},"javascript":{},"request":{"timeout":15000},"job":{"timeout":120000}}"
+2025-10-05 19:43:12.095 +0530 [debug] (configs.js) loaded resolved configs as "{"updates":{"manifest_url":"https://cdn.freshdev.io/assets/fdk/updates.json","period":24},"log":{"level":"info"},"javascript":{"ecma_version":2020},"request":{"timeout":15000},"global_apps":{"enabled":"false"},"easel":{"enabled":false},"job":{"timeout":120000}}"
+2025-10-05 19:43:12.095 +0530 [debug] (logger.js) Starting FDK in node v18.20.8 on win32
+2025-10-05 19:43:12.095 +0530 [debug] (sequelize.js) setting up sqilite at "C:\Users\srini\Desktop\shopeasy-freshdesk-orders-app/.fdk/store.sqlite"
+2025-10-05 19:43:12.095 +0530 [debug] (data.js) Read {"version_details":{"cli":{"deprecated":{"version":"<9","message":"This FDK version has been deprecated. There will be no further feature updates to this version. For a seamless app-building experience, ensure to move to the latest FDK version. For more information, see https://developers.freshworks.com/docs/app-sdk/v2.3/freshdesk/migration-guide/#migrate-to-the-latest-platform-version."},"forced":{"version":"7.0.0","command":"npm install https://dl.freshdev.io/cli/fdk-7.0.0.tgz -g","message":"Your FDK version has been forced updated to v7.0.0, please visit https://community.developers.freshworks.com/t/fdk-v7-0-announcing-node-js-v12-and-es6-support/3606 to know more"},"latest":{"version":"9.7.0","command":"npm install https://cdn.freshdev.io/fdk/latest.tgz -g","message":"You are on the latest FDK version. For information on the features available as part of this FDK version, see https://developers.freshworks.com/docs/?tab=modules."}},"addon":{"version":"2.2.1","url":"https://cdn.freshdev.io/assets/fdk/addons/addon.zip"}},"last_updated":{"time_stamp":1759672442759}}
+2025-10-05 19:43:12.096 +0530 [debug] (updater.js) last check less than 24 hours ago, not looking for updates
+2025-10-05 19:43:12.103 +0530 [debug] (index.js) running with opts {}
+2025-10-05 19:43:12.449 +0530 [debug] (data.js) Read {"version_details":{"cli":{"deprecated":{"version":"<9","message":"This FDK version has been deprecated. There will be no further feature updates to this version. For a seamless app-building experience, ensure to move to the latest FDK version. For more information, see https://developers.freshworks.com/docs/app-sdk/v2.3/freshdesk/migration-guide/#migrate-to-the-latest-platform-version."},"forced":{"version":"7.0.0","command":"npm install https://dl.freshdev.io/cli/fdk-7.0.0.tgz -g","message":"Your FDK version has been forced updated to v7.0.0, please visit https://community.developers.freshworks.com/t/fdk-v7-0-announcing-node-js-v12-and-es6-support/3606 to know more"},"latest":{"version":"9.7.0","command":"npm install https://cdn.freshdev.io/fdk/latest.tgz -g","message":"You are on the latest FDK version. For information on the features available as part of this FDK version, see https://developers.freshworks.com/docs/?tab=modules."}},"addon":{"version":"2.2.1","url":"https://cdn.freshdev.io/assets/fdk/addons/addon.zip"}},"last_updated":{"time_stamp":1759672442759}}
+2025-10-05 19:43:12.454 +0530 [debug] (manifest.js) Reloading manifest with {"platform-version":"2.3","product":{"freshdesk":{"location":{"portal_ticket_sidebar":{"url":"index.html","icon":"styles/images/icon.svg"}}}},"engines":{"node":"18.20.8","fdk":"9.7.0"}}.
+2025-10-05 19:43:12.455 +0530 [debug] (manifest.js) Inferred db,backend as features.
+2025-10-05 19:43:12.535 +0530 [debug] (data.js) Read {"version_details":{"cli":{"deprecated":{"version":"<9","message":"This FDK version has been deprecated. There will be no further feature updates to this version. For a seamless app-building experience, ensure to move to the latest FDK version. For more information, see https://developers.freshworks.com/docs/app-sdk/v2.3/freshdesk/migration-guide/#migrate-to-the-latest-platform-version."},"forced":{"version":"7.0.0","command":"npm install https://dl.freshdev.io/cli/fdk-7.0.0.tgz -g","message":"Your FDK version has been forced updated to v7.0.0, please visit https://community.developers.freshworks.com/t/fdk-v7-0-announcing-node-js-v12-and-es6-support/3606 to know more"},"latest":{"version":"9.7.0","command":"npm install https://cdn.freshdev.io/fdk/latest.tgz -g","message":"You are on the latest FDK version. For information on the features available as part of this FDK version, see https://developers.freshworks.com/docs/?tab=modules."}},"addon":{"version":"2.2.1","url":"https://cdn.freshdev.io/assets/fdk/addons/addon.zip"}},"last_updated":{"time_stamp":1759672442759}}
+2025-10-05 19:43:13.161 +0530 [debug] (index.js) loading model at "C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\models\bigint-pivot.js"
+2025-10-05 19:43:13.164 +0530 [debug] (index.js) loading model at "C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\models\entity-field-choice.js"
+2025-10-05 19:43:13.166 +0530 [debug] (index.js) loading model at "C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\models\entity-field.js"
+2025-10-05 19:43:13.167 +0530 [debug] (index.js) loading model at "C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\models\entity.js"
+2025-10-05 19:43:13.168 +0530 [debug] (index.js) loading model at "C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\models\files.js"
+2025-10-05 19:43:13.170 +0530 [debug] (index.js) loading model at "C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\models\oauth-details.js"
+2025-10-05 19:43:13.171 +0530 [debug] (index.js) loading model at "C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\models\record.js"
+2025-10-05 19:43:13.176 +0530 [debug] (index.js) loading model at "C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\models\string-pivot.js"
+2025-10-05 19:43:13.443 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:43:13.457 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:43:13.459 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:43:13.460 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:43:13.465 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:43:13.468 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:43:13.469 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:43:13.478 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:43:13.479 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:43:13.480 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:43:13.485 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:43:13.489 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:43:13.493 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:43:13.494 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:43:13.495 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:43:13.499 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:43:13.503 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:43:13.518 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:43:14.743 +0530 [debug] (data.js) Read {"version_details":{"cli":{"deprecated":{"version":"<9","message":"This FDK version has been deprecated. There will be no further feature updates to this version. For a seamless app-building experience, ensure to move to the latest FDK version. For more information, see https://developers.freshworks.com/docs/app-sdk/v2.3/freshdesk/migration-guide/#migrate-to-the-latest-platform-version."},"forced":{"version":"7.0.0","command":"npm install https://dl.freshdev.io/cli/fdk-7.0.0.tgz -g","message":"Your FDK version has been forced updated to v7.0.0, please visit https://community.developers.freshworks.com/t/fdk-v7-0-announcing-node-js-v12-and-es6-support/3606 to know more"},"latest":{"version":"9.7.0","command":"npm install https://cdn.freshdev.io/fdk/latest.tgz -g","message":"You are on the latest FDK version. For information on the features available as part of this FDK version, see https://developers.freshworks.com/docs/?tab=modules."}},"addon":{"version":"2.2.1","url":"https://cdn.freshdev.io/assets/fdk/addons/addon.zip"}},"last_updated":{"time_stamp":1759672442759}}
+2025-10-05 19:43:16.544 +0530 [debug] (validate.js) asked to skip the following validations, 
+2025-10-05 19:43:16.544 +0530 [debug] (validate.js) running validator actions
+2025-10-05 19:43:16.544 +0530 [debug] (validate.js) running validator requests
+2025-10-05 19:43:16.544 +0530 [debug] (validate.js) running validator app-dir
+2025-10-05 19:43:16.545 +0530 [debug] (validate.js) running validator config-dir
+2025-10-05 19:43:16.546 +0530 [debug] (config-dir.js) Checking to see if C:\Users\srini\Desktop\shopeasy-freshdesk-orders-app/config/ exists.
+2025-10-05 19:43:16.546 +0530 [debug] (config-dir.js) Fetched the following config files assets,iparams.json
+2025-10-05 19:43:16.546 +0530 [debug] (validate.js) running validator custom-objects
+2025-10-05 19:43:16.546 +0530 [debug] (validate.js) running validator event
+2025-10-05 19:43:16.560 +0530 [debug] (event.js) Found ["onTicketCreateHandler","getOrderHistory","testMethod"] as exported functions.
+2025-10-05 19:43:16.560 +0530 [debug] (validate.js) running validator iparam
+2025-10-05 19:43:16.566 +0530 [debug] (validate.js) running validator lint
+2025-10-05 19:43:16.566 +0530 [debug] (lint.js) passed fix flag: undefined
+2025-10-05 19:43:16.573 +0530 [debug] (lint.js) Running the following lints on the file app\scripts\app.js : no-eval,no-alert,no-debugger,no-unreachable,no-duplicate-imports,constructor-super,for-direction,no-class-assign,no-new-native-nonconstructor,valid-typeof,no-eq-null,no-var,require-await,no-unreachable-loop,no-redeclare,no-self-assign,no-setter-return,no-shadow-restricted-names,no-this-before-super,no-unsafe-finally,no-unsafe-optional-chaining,no-unused-vars,no-useless-catch,eqeqeq,prefer-const,require-yield,no-global-assign,no-caller,no-process-env,complexity,max-nested-callbacks,handle-callback-err,getter-return,no-async-promise-executor,no-case-declarations,no-compare-neg-zero,no-cond-assign,no-const-assign,no-constant-condition,no-control-regex,no-delete-var,no-dupe-args,no-dupe-class-members,no-dupe-else-if,no-dupe-keys,no-duplicate-case,no-empty,no-empty-character-class,no-empty-pattern,no-ex-assign,no-extra-boolean-cast,no-extra-semi,no-fallthrough,no-func-assign,no-import-assign,no-inner-declarations,no-invalid-regexp,no-irregular-whitespace,no-loss-of-precision,no-misleading-character-class,no-mixed-spaces-and-tabs,no-nonoctal-decimal-escape,no-obj-calls,no-octal,no-prototype-builtins,no-regex-spaces,no-sparse-arrays,no-unexpected-multiline,no-unsafe-negation,no-unused-labels,no-useless-backreference,no-useless-escape,no-with,use-isnan,no-unpkg-cdn,no-proxy-requests,no-unhandled-promise,no-logging-rejections,no-non-client-request-model,no-deprecated-apis,no-cross-scope-assign,no-empty-function
+2025-10-05 19:43:16.753 +0530 [debug] (lint.js) Running the following lints on the file server\lib\handle-response.js : no-eval,no-alert,no-debugger,no-unreachable,no-duplicate-imports,constructor-super,for-direction,no-class-assign,no-new-native-nonconstructor,valid-typeof,no-eq-null,no-var,require-await,no-unreachable-loop,no-redeclare,no-self-assign,no-setter-return,no-shadow-restricted-names,no-this-before-super,no-unsafe-finally,no-unsafe-optional-chaining,no-unused-vars,no-useless-catch,eqeqeq,prefer-const,require-yield,no-global-assign,no-caller,no-process-env,complexity,max-nested-callbacks,handle-callback-err,getter-return,no-async-promise-executor,no-case-declarations,no-compare-neg-zero,no-cond-assign,no-const-assign,no-constant-condition,no-control-regex,no-delete-var,no-dupe-args,no-dupe-class-members,no-dupe-else-if,no-dupe-keys,no-duplicate-case,no-empty,no-empty-character-class,no-empty-pattern,no-ex-assign,no-extra-boolean-cast,no-extra-semi,no-fallthrough,no-func-assign,no-import-assign,no-inner-declarations,no-invalid-regexp,no-irregular-whitespace,no-loss-of-precision,no-misleading-character-class,no-mixed-spaces-and-tabs,no-nonoctal-decimal-escape,no-obj-calls,no-octal,no-prototype-builtins,no-regex-spaces,no-sparse-arrays,no-unexpected-multiline,no-unsafe-negation,no-unused-labels,no-useless-backreference,no-useless-escape,no-with,use-isnan,no-unpkg-cdn,no-proxy-requests,no-unhandled-promise,no-logging-rejections,no-non-client-request-model,no-deprecated-apis,no-dependency-mismatch,no-empty-function
+2025-10-05 19:43:16.758 +0530 [debug] (lint.js) Running the following lints on the file server\server.js : no-eval,no-alert,no-debugger,no-unreachable,no-duplicate-imports,constructor-super,for-direction,no-class-assign,no-new-native-nonconstructor,valid-typeof,no-eq-null,no-var,require-await,no-unreachable-loop,no-redeclare,no-self-assign,no-setter-return,no-shadow-restricted-names,no-this-before-super,no-unsafe-finally,no-unsafe-optional-chaining,no-unused-vars,no-useless-catch,eqeqeq,prefer-const,require-yield,no-global-assign,no-caller,no-process-env,complexity,max-nested-callbacks,handle-callback-err,getter-return,no-async-promise-executor,no-case-declarations,no-compare-neg-zero,no-cond-assign,no-const-assign,no-constant-condition,no-control-regex,no-delete-var,no-dupe-args,no-dupe-class-members,no-dupe-else-if,no-dupe-keys,no-duplicate-case,no-empty,no-empty-character-class,no-empty-pattern,no-ex-assign,no-extra-boolean-cast,no-extra-semi,no-fallthrough,no-func-assign,no-import-assign,no-inner-declarations,no-invalid-regexp,no-irregular-whitespace,no-loss-of-precision,no-misleading-character-class,no-mixed-spaces-and-tabs,no-nonoctal-decimal-escape,no-obj-calls,no-octal,no-prototype-builtins,no-regex-spaces,no-sparse-arrays,no-unexpected-multiline,no-unsafe-negation,no-unused-labels,no-useless-backreference,no-useless-escape,no-with,use-isnan,no-unpkg-cdn,no-proxy-requests,no-unhandled-promise,no-logging-rejections,no-non-client-request-model,no-deprecated-apis,no-dependency-mismatch,no-empty-function
+2025-10-05 19:43:16.776 +0530 [debug] (lint.js) Running the following lints on the file config\assets\iparams.js : no-unpkg-cdn,no-proxy-requests,no-logging-rejections
+2025-10-05 19:43:16.788 +0530 [debug] (validate.js) running validator manifest
+2025-10-05 19:43:16.789 +0530 [debug] (validate.js) skipping validator manifest-dependency
+2025-10-05 19:43:16.789 +0530 [debug] (validate.js) running validator oauth
+2025-10-05 19:43:16.789 +0530 [debug] (validate.js) skipping validator pkgsize
+2025-10-05 19:43:16.789 +0530 [debug] (validate.js) running validator schema
+2025-10-05 19:43:16.789 +0530 [debug] (validate.js) running validator version-check
+2025-10-05 19:43:16.789 +0530 [debug] (validate.js) running validator app-settings
+2025-10-05 19:43:16.793 +0530 [error] The local server could not be started due to the following issue(s):
+2025-10-05 19:43:16.794 +0530 [error] Platform errors:
+2025-10-05 19:43:16.797 +0530 [error] [31m×[39m Invalid location(s) mentioned in manifest.json: 
+     freshdesk - portal_ticket_sidebar
+2025-10-05 19:43:16.797 +0530 [error] 
+2025-10-05 19:43:16.797 +0530 [error] 
+2025-10-05 19:43:16.797 +0530 [warn] Please ensure that the following are addressed for quick review process:
+2025-10-05 19:43:16.797 +0530 [warn] [33m‼[39m app\scripts\app.js::28: Async function 'loadOrderHistory' has a complexity of 13. Maximum allowed is 7.
+2025-10-05 19:43:16.798 +0530 [warn] 
+2025-10-05 19:43:16.817 +0530 [debug] (report.js) Generating hash for report.json file
+2025-10-05 19:43:27.322 +0530 [debug] (manifest.js) Reloading manifest with {"platform-version":"2.3","product":{"freshdesk":{"location":{"ticket_sidebar":{"url":"index.html","icon":"styles/images/icon.svg"},"new_ticket_sidebar":{"url":"index.html","icon":"styles/images/icon.svg"}}}},"engines":{"node":"18.20.8","fdk":"9.7.0"}}.
+2025-10-05 19:43:27.323 +0530 [debug] (manifest.js) Inferred db,backend as features.
+2025-10-05 19:43:27.323 +0530 [debug] (watcher.js) Broadcasted "{"file":"manifest.json"}" to all listeners.
+2025-10-05 19:43:27.333 +0530 [debug] (iframe.js) Responding with contents of /index.html
+2025-10-05 19:43:27.369 +0530 [debug] (iframe.js) Responding with contents of /scripts/app.js
+2025-10-05 19:43:27.370 +0530 [debug] (coverage.js) Instrumenting C:\Users\srini\Desktop\shopeasy-freshdesk-orders-app\app\scripts\app.js
+2025-10-05 19:43:29.582 +0530 [debug] (data-pipe.js) received call for route "smi" with action "invoke" and body {"action":"invoke","methodName":"testMethod","methodParams":{"test":"hello"}}
+2025-10-05 19:43:29.583 +0530 [debug] (data.js) Read {"report_hash":"11430b62d16738239478fbe90da8061eec4c9990192c19c38441db5c4ee3a3f0","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:43:29.583 +0530 [debug] (error.js) uncaught exception while handling web request "FunctionNotFoundError: Requested function 'testMethod' not found or registered
+    at getFunctionDetails (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\api\smi.js:42:11)
+    at Object.invoke (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\api\smi.js:69:7)
+    at dpRouterExec (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\routes\data-pipe.js:42:32)
+    at asyncify (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\utils\helper.js:161:28)
+    at Layer.handle [as handle_request] (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:280:10)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\middlewares\validator.js:16:32
+    at asyncify (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\utils\helper.js:161:28)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\routes\data-pipe.js:55:82
+    at Layer.handle [as handle_request] (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:346:12)
+    at Immediate.next (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:646:15)
+    at process.processImmediate (node:internal/timers:478:21)"
+2025-10-05 19:43:30.344 +0530 [debug] (coverage.js) Writing coverage.
+2025-10-05 19:43:50.507 +0530 [debug] (watcher.js) Broadcasted "{"file":"app\\scripts\\app.js"}" to all listeners.
+2025-10-05 19:43:50.516 +0530 [debug] (iframe.js) Responding with contents of /index.html
+2025-10-05 19:43:50.543 +0530 [debug] (iframe.js) Responding with contents of /scripts/app.js
+2025-10-05 19:43:50.544 +0530 [debug] (coverage.js) Instrumenting C:\Users\srini\Desktop\shopeasy-freshdesk-orders-app\app\scripts\app.js
+2025-10-05 19:43:52.588 +0530 [debug] (data-pipe.js) received call for route "smi" with action "invoke" and body {"action":"invoke","methodName":"testMethod","methodParams":{"test":"hello"}}
+2025-10-05 19:43:52.589 +0530 [debug] (data.js) Read {"report_hash":"11430b62d16738239478fbe90da8061eec4c9990192c19c38441db5c4ee3a3f0","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:43:52.590 +0530 [debug] (error.js) uncaught exception while handling web request "FunctionNotFoundError: Requested function 'testMethod' not found or registered
+    at getFunctionDetails (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\api\smi.js:42:11)
+    at Object.invoke (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\api\smi.js:69:7)
+    at dpRouterExec (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\routes\data-pipe.js:42:32)
+    at asyncify (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\utils\helper.js:161:28)
+    at Layer.handle [as handle_request] (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:280:10)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\middlewares\validator.js:16:32
+    at asyncify (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\utils\helper.js:161:28)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\routes\data-pipe.js:55:82
+    at Layer.handle [as handle_request] (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:346:12)
+    at Immediate.next (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:646:15)
+    at process.processImmediate (node:internal/timers:478:21)"
+2025-10-05 19:43:53.348 +0530 [debug] (coverage.js) Writing coverage.
+2025-10-05 19:43:58.940 +0530 [debug] (configs.js) loaded default configs as "{"updates":{"manifest_url":"https://cdn.freshdev.io/assets/fdk/updates.json","period":24},"log":{"level":"info"},"javascript":{"ecma_version":2020},"request":{"timeout":15000},"global_apps":{"enabled":true},"easel":{"enabled":false},"job":{"timeout":120000}}"
+2025-10-05 19:43:58.943 +0530 [debug] (configs.js) loaded global configs as "{"global_apps":{"enabled":"false"},"request":{"timeout":15000},"job":{"timeout":120000}}"
+2025-10-05 19:43:58.944 +0530 [debug] (configs.js) loaded local configs as "{"request":{"timeout":15000},"job":{"timeout":120000},"global_apps":{"enabled":"false"}}"
+2025-10-05 19:43:58.944 +0530 [debug] (configs.js) loaded env configs as "{"updates":{},"log":{},"javascript":{},"request":{"timeout":15000},"job":{"timeout":120000}}"
+2025-10-05 19:43:58.944 +0530 [debug] (configs.js) loaded resolved configs as "{"updates":{"manifest_url":"https://cdn.freshdev.io/assets/fdk/updates.json","period":24},"log":{"level":"info"},"javascript":{"ecma_version":2020},"request":{"timeout":15000},"global_apps":{"enabled":"false"},"easel":{"enabled":false},"job":{"timeout":120000}}"
+2025-10-05 19:43:58.944 +0530 [debug] (logger.js) Starting FDK in node v18.20.8 on win32
+2025-10-05 19:43:58.944 +0530 [debug] (sequelize.js) setting up sqilite at "C:\Users\srini\Desktop\shopeasy-freshdesk-orders-app/.fdk/store.sqlite"
+2025-10-05 19:43:58.944 +0530 [debug] (data.js) Read {"version_details":{"cli":{"deprecated":{"version":"<9","message":"This FDK version has been deprecated. There will be no further feature updates to this version. For a seamless app-building experience, ensure to move to the latest FDK version. For more information, see https://developers.freshworks.com/docs/app-sdk/v2.3/freshdesk/migration-guide/#migrate-to-the-latest-platform-version."},"forced":{"version":"7.0.0","command":"npm install https://dl.freshdev.io/cli/fdk-7.0.0.tgz -g","message":"Your FDK version has been forced updated to v7.0.0, please visit https://community.developers.freshworks.com/t/fdk-v7-0-announcing-node-js-v12-and-es6-support/3606 to know more"},"latest":{"version":"9.7.0","command":"npm install https://cdn.freshdev.io/fdk/latest.tgz -g","message":"You are on the latest FDK version. For information on the features available as part of this FDK version, see https://developers.freshworks.com/docs/?tab=modules."}},"addon":{"version":"2.2.1","url":"https://cdn.freshdev.io/assets/fdk/addons/addon.zip"}},"last_updated":{"time_stamp":1759672442759}}
+2025-10-05 19:43:58.945 +0530 [debug] (updater.js) last check less than 24 hours ago, not looking for updates
+2025-10-05 19:43:58.949 +0530 [debug] (index.js) running with opts {}
+2025-10-05 19:43:59.167 +0530 [debug] (data.js) Read {"version_details":{"cli":{"deprecated":{"version":"<9","message":"This FDK version has been deprecated. There will be no further feature updates to this version. For a seamless app-building experience, ensure to move to the latest FDK version. For more information, see https://developers.freshworks.com/docs/app-sdk/v2.3/freshdesk/migration-guide/#migrate-to-the-latest-platform-version."},"forced":{"version":"7.0.0","command":"npm install https://dl.freshdev.io/cli/fdk-7.0.0.tgz -g","message":"Your FDK version has been forced updated to v7.0.0, please visit https://community.developers.freshworks.com/t/fdk-v7-0-announcing-node-js-v12-and-es6-support/3606 to know more"},"latest":{"version":"9.7.0","command":"npm install https://cdn.freshdev.io/fdk/latest.tgz -g","message":"You are on the latest FDK version. For information on the features available as part of this FDK version, see https://developers.freshworks.com/docs/?tab=modules."}},"addon":{"version":"2.2.1","url":"https://cdn.freshdev.io/assets/fdk/addons/addon.zip"}},"last_updated":{"time_stamp":1759672442759}}
+2025-10-05 19:43:59.170 +0530 [debug] (manifest.js) Reloading manifest with {"platform-version":"2.3","product":{"freshdesk":{"location":{"ticket_sidebar":{"url":"index.html","icon":"styles/images/icon.svg"},"new_ticket_sidebar":{"url":"index.html","icon":"styles/images/icon.svg"}}}},"engines":{"node":"18.20.8","fdk":"9.7.0"}}.
+2025-10-05 19:43:59.171 +0530 [debug] (manifest.js) Inferred db,backend as features.
+2025-10-05 19:43:59.220 +0530 [debug] (data.js) Read {"version_details":{"cli":{"deprecated":{"version":"<9","message":"This FDK version has been deprecated. There will be no further feature updates to this version. For a seamless app-building experience, ensure to move to the latest FDK version. For more information, see https://developers.freshworks.com/docs/app-sdk/v2.3/freshdesk/migration-guide/#migrate-to-the-latest-platform-version."},"forced":{"version":"7.0.0","command":"npm install https://dl.freshdev.io/cli/fdk-7.0.0.tgz -g","message":"Your FDK version has been forced updated to v7.0.0, please visit https://community.developers.freshworks.com/t/fdk-v7-0-announcing-node-js-v12-and-es6-support/3606 to know more"},"latest":{"version":"9.7.0","command":"npm install https://cdn.freshdev.io/fdk/latest.tgz -g","message":"You are on the latest FDK version. For information on the features available as part of this FDK version, see https://developers.freshworks.com/docs/?tab=modules."}},"addon":{"version":"2.2.1","url":"https://cdn.freshdev.io/assets/fdk/addons/addon.zip"}},"last_updated":{"time_stamp":1759672442759}}
+2025-10-05 19:43:59.637 +0530 [debug] (index.js) loading model at "C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\models\bigint-pivot.js"
+2025-10-05 19:43:59.639 +0530 [debug] (index.js) loading model at "C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\models\entity-field-choice.js"
+2025-10-05 19:43:59.640 +0530 [debug] (index.js) loading model at "C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\models\entity-field.js"
+2025-10-05 19:43:59.641 +0530 [debug] (index.js) loading model at "C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\models\entity.js"
+2025-10-05 19:43:59.642 +0530 [debug] (index.js) loading model at "C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\models\files.js"
+2025-10-05 19:43:59.644 +0530 [debug] (index.js) loading model at "C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\models\oauth-details.js"
+2025-10-05 19:43:59.645 +0530 [debug] (index.js) loading model at "C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\models\record.js"
+2025-10-05 19:43:59.648 +0530 [debug] (index.js) loading model at "C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\models\string-pivot.js"
+2025-10-05 19:43:59.858 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:43:59.872 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:43:59.874 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:43:59.875 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:43:59.878 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:43:59.881 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:43:59.882 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:43:59.891 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:43:59.892 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:43:59.893 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:43:59.902 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:43:59.905 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:43:59.911 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:43:59.912 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:43:59.913 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:43:59.917 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:43:59.921 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:43:59.938 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:44:00.790 +0530 [debug] (data.js) Read {"version_details":{"cli":{"deprecated":{"version":"<9","message":"This FDK version has been deprecated. There will be no further feature updates to this version. For a seamless app-building experience, ensure to move to the latest FDK version. For more information, see https://developers.freshworks.com/docs/app-sdk/v2.3/freshdesk/migration-guide/#migrate-to-the-latest-platform-version."},"forced":{"version":"7.0.0","command":"npm install https://dl.freshdev.io/cli/fdk-7.0.0.tgz -g","message":"Your FDK version has been forced updated to v7.0.0, please visit https://community.developers.freshworks.com/t/fdk-v7-0-announcing-node-js-v12-and-es6-support/3606 to know more"},"latest":{"version":"9.7.0","command":"npm install https://cdn.freshdev.io/fdk/latest.tgz -g","message":"You are on the latest FDK version. For information on the features available as part of this FDK version, see https://developers.freshworks.com/docs/?tab=modules."}},"addon":{"version":"2.2.1","url":"https://cdn.freshdev.io/assets/fdk/addons/addon.zip"}},"last_updated":{"time_stamp":1759672442759}}
+2025-10-05 19:44:02.236 +0530 [debug] (validate.js) asked to skip the following validations, 
+2025-10-05 19:44:02.236 +0530 [debug] (validate.js) running validator actions
+2025-10-05 19:44:02.236 +0530 [debug] (validate.js) running validator requests
+2025-10-05 19:44:02.236 +0530 [debug] (validate.js) running validator app-dir
+2025-10-05 19:44:02.237 +0530 [debug] (validate.js) running validator config-dir
+2025-10-05 19:44:02.238 +0530 [debug] (config-dir.js) Checking to see if C:\Users\srini\Desktop\shopeasy-freshdesk-orders-app/config/ exists.
+2025-10-05 19:44:02.238 +0530 [debug] (config-dir.js) Fetched the following config files assets,iparams.json
+2025-10-05 19:44:02.238 +0530 [debug] (validate.js) running validator custom-objects
+2025-10-05 19:44:02.238 +0530 [debug] (validate.js) running validator event
+2025-10-05 19:44:02.252 +0530 [debug] (event.js) Found ["onTicketCreateHandler","getOrderHistory","testMethod"] as exported functions.
+2025-10-05 19:44:02.253 +0530 [debug] (validate.js) running validator iparam
+2025-10-05 19:44:02.257 +0530 [debug] (validate.js) running validator lint
+2025-10-05 19:44:02.257 +0530 [debug] (lint.js) passed fix flag: undefined
+2025-10-05 19:44:02.265 +0530 [debug] (lint.js) Running the following lints on the file app\scripts\app.js : no-eval,no-alert,no-debugger,no-unreachable,no-duplicate-imports,constructor-super,for-direction,no-class-assign,no-new-native-nonconstructor,valid-typeof,no-eq-null,no-var,require-await,no-unreachable-loop,no-redeclare,no-self-assign,no-setter-return,no-shadow-restricted-names,no-this-before-super,no-unsafe-finally,no-unsafe-optional-chaining,no-unused-vars,no-useless-catch,eqeqeq,prefer-const,require-yield,no-global-assign,no-caller,no-process-env,complexity,max-nested-callbacks,handle-callback-err,getter-return,no-async-promise-executor,no-case-declarations,no-compare-neg-zero,no-cond-assign,no-const-assign,no-constant-condition,no-control-regex,no-delete-var,no-dupe-args,no-dupe-class-members,no-dupe-else-if,no-dupe-keys,no-duplicate-case,no-empty,no-empty-character-class,no-empty-pattern,no-ex-assign,no-extra-boolean-cast,no-extra-semi,no-fallthrough,no-func-assign,no-import-assign,no-inner-declarations,no-invalid-regexp,no-irregular-whitespace,no-loss-of-precision,no-misleading-character-class,no-mixed-spaces-and-tabs,no-nonoctal-decimal-escape,no-obj-calls,no-octal,no-prototype-builtins,no-regex-spaces,no-sparse-arrays,no-unexpected-multiline,no-unsafe-negation,no-unused-labels,no-useless-backreference,no-useless-escape,no-with,use-isnan,no-unpkg-cdn,no-proxy-requests,no-unhandled-promise,no-logging-rejections,no-non-client-request-model,no-deprecated-apis,no-cross-scope-assign,no-empty-function
+2025-10-05 19:44:02.410 +0530 [debug] (lint.js) Running the following lints on the file server\lib\handle-response.js : no-eval,no-alert,no-debugger,no-unreachable,no-duplicate-imports,constructor-super,for-direction,no-class-assign,no-new-native-nonconstructor,valid-typeof,no-eq-null,no-var,require-await,no-unreachable-loop,no-redeclare,no-self-assign,no-setter-return,no-shadow-restricted-names,no-this-before-super,no-unsafe-finally,no-unsafe-optional-chaining,no-unused-vars,no-useless-catch,eqeqeq,prefer-const,require-yield,no-global-assign,no-caller,no-process-env,complexity,max-nested-callbacks,handle-callback-err,getter-return,no-async-promise-executor,no-case-declarations,no-compare-neg-zero,no-cond-assign,no-const-assign,no-constant-condition,no-control-regex,no-delete-var,no-dupe-args,no-dupe-class-members,no-dupe-else-if,no-dupe-keys,no-duplicate-case,no-empty,no-empty-character-class,no-empty-pattern,no-ex-assign,no-extra-boolean-cast,no-extra-semi,no-fallthrough,no-func-assign,no-import-assign,no-inner-declarations,no-invalid-regexp,no-irregular-whitespace,no-loss-of-precision,no-misleading-character-class,no-mixed-spaces-and-tabs,no-nonoctal-decimal-escape,no-obj-calls,no-octal,no-prototype-builtins,no-regex-spaces,no-sparse-arrays,no-unexpected-multiline,no-unsafe-negation,no-unused-labels,no-useless-backreference,no-useless-escape,no-with,use-isnan,no-unpkg-cdn,no-proxy-requests,no-unhandled-promise,no-logging-rejections,no-non-client-request-model,no-deprecated-apis,no-dependency-mismatch,no-empty-function
+2025-10-05 19:44:02.416 +0530 [debug] (lint.js) Running the following lints on the file server\server.js : no-eval,no-alert,no-debugger,no-unreachable,no-duplicate-imports,constructor-super,for-direction,no-class-assign,no-new-native-nonconstructor,valid-typeof,no-eq-null,no-var,require-await,no-unreachable-loop,no-redeclare,no-self-assign,no-setter-return,no-shadow-restricted-names,no-this-before-super,no-unsafe-finally,no-unsafe-optional-chaining,no-unused-vars,no-useless-catch,eqeqeq,prefer-const,require-yield,no-global-assign,no-caller,no-process-env,complexity,max-nested-callbacks,handle-callback-err,getter-return,no-async-promise-executor,no-case-declarations,no-compare-neg-zero,no-cond-assign,no-const-assign,no-constant-condition,no-control-regex,no-delete-var,no-dupe-args,no-dupe-class-members,no-dupe-else-if,no-dupe-keys,no-duplicate-case,no-empty,no-empty-character-class,no-empty-pattern,no-ex-assign,no-extra-boolean-cast,no-extra-semi,no-fallthrough,no-func-assign,no-import-assign,no-inner-declarations,no-invalid-regexp,no-irregular-whitespace,no-loss-of-precision,no-misleading-character-class,no-mixed-spaces-and-tabs,no-nonoctal-decimal-escape,no-obj-calls,no-octal,no-prototype-builtins,no-regex-spaces,no-sparse-arrays,no-unexpected-multiline,no-unsafe-negation,no-unused-labels,no-useless-backreference,no-useless-escape,no-with,use-isnan,no-unpkg-cdn,no-proxy-requests,no-unhandled-promise,no-logging-rejections,no-non-client-request-model,no-deprecated-apis,no-dependency-mismatch,no-empty-function
+2025-10-05 19:44:02.434 +0530 [debug] (lint.js) Running the following lints on the file config\assets\iparams.js : no-unpkg-cdn,no-proxy-requests,no-logging-rejections
+2025-10-05 19:44:02.445 +0530 [debug] (validate.js) running validator manifest
+2025-10-05 19:44:02.445 +0530 [debug] (validate.js) skipping validator manifest-dependency
+2025-10-05 19:44:02.446 +0530 [debug] (validate.js) running validator oauth
+2025-10-05 19:44:02.446 +0530 [debug] (validate.js) skipping validator pkgsize
+2025-10-05 19:44:02.446 +0530 [debug] (validate.js) running validator schema
+2025-10-05 19:44:02.446 +0530 [debug] (validate.js) running validator version-check
+2025-10-05 19:44:02.446 +0530 [debug] (validate.js) running validator app-settings
+2025-10-05 19:44:02.451 +0530 [error] The local server could not be started due to the following issue(s):
+2025-10-05 19:44:02.451 +0530 [error] Platform errors:
+2025-10-05 19:44:02.451 +0530 [error] [31m×[39m Invalid location(s) mentioned in manifest.json: 
+     freshdesk - new_ticket_sidebar
+2025-10-05 19:44:02.451 +0530 [error] 
+2025-10-05 19:44:02.451 +0530 [error] 
+2025-10-05 19:44:02.473 +0530 [debug] (report.js) Generating hash for report.json file
+2025-10-05 19:44:10.190 +0530 [debug] (manifest.js) Reloading manifest with {"platform-version":"2.3","product":{"freshdesk":{"location":{"ticket_sidebar":{"url":"index.html","icon":"styles/images/icon.svg"}}}},"engines":{"node":"18.20.8","fdk":"9.7.0"}}.
+2025-10-05 19:44:10.191 +0530 [debug] (manifest.js) Inferred db,backend as features.
+2025-10-05 19:44:10.191 +0530 [debug] (watcher.js) Broadcasted "{"file":"manifest.json"}" to all listeners.
+2025-10-05 19:44:10.200 +0530 [debug] (iframe.js) Responding with contents of /index.html
+2025-10-05 19:44:10.232 +0530 [debug] (iframe.js) Responding with contents of /scripts/app.js
+2025-10-05 19:44:10.234 +0530 [debug] (coverage.js) Instrumenting C:\Users\srini\Desktop\shopeasy-freshdesk-orders-app\app\scripts\app.js
+2025-10-05 19:44:12.350 +0530 [debug] (coverage.js) Writing coverage.
+2025-10-05 19:44:12.568 +0530 [debug] (data-pipe.js) received call for route "smi" with action "invoke" and body {"action":"invoke","methodName":"testMethod","methodParams":{"test":"hello"}}
+2025-10-05 19:44:12.569 +0530 [debug] (data.js) Read {"report_hash":"6564715fdaf5f1bea22d2e462c00c87c37e88f475c296b17df2d783ccb805ed3","server_101_101_migrate_oauth_status":true,"shopea_101_101_migrate_oauth_status":true}
+2025-10-05 19:44:12.570 +0530 [debug] (error.js) uncaught exception while handling web request "FunctionNotFoundError: Requested function 'testMethod' not found or registered
+    at getFunctionDetails (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\api\smi.js:42:11)
+    at Object.invoke (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\api\smi.js:69:7)
+    at dpRouterExec (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\routes\data-pipe.js:42:32)
+    at asyncify (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\utils\helper.js:161:28)
+    at Layer.handle [as handle_request] (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:280:10)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\middlewares\validator.js:16:32
+    at asyncify (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\utils\helper.js:161:28)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\routes\data-pipe.js:55:82
+    at Layer.handle [as handle_request] (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:328:13)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:346:12)
+    at Immediate.next (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:280:10)
+    at Immediate._onImmediate (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express\lib\router\index.js:646:15)
+    at process.processImmediate (node:internal/timers:478:21)"
+2025-10-05 19:44:14.349 +0530 [debug] (coverage.js) Writing coverage.
+2025-10-05 19:44:18.494 +0530 [debug] (configs.js) loaded default configs as "{"updates":{"manifest_url":"https://cdn.freshdev.io/assets/fdk/updates.json","period":24},"log":{"level":"info"},"javascript":{"ecma_version":2020},"request":{"timeout":15000},"global_apps":{"enabled":true},"easel":{"enabled":false},"job":{"timeout":120000}}"
+2025-10-05 19:44:18.497 +0530 [debug] (configs.js) loaded global configs as "{"global_apps":{"enabled":"false"},"request":{"timeout":15000},"job":{"timeout":120000}}"
+2025-10-05 19:44:18.498 +0530 [debug] (configs.js) loaded local configs as "{"request":{"timeout":15000},"job":{"timeout":120000},"global_apps":{"enabled":"false"}}"
+2025-10-05 19:44:18.498 +0530 [debug] (configs.js) loaded env configs as "{"updates":{},"log":{},"javascript":{},"request":{"timeout":15000},"job":{"timeout":120000}}"
+2025-10-05 19:44:18.498 +0530 [debug] (configs.js) loaded resolved configs as "{"updates":{"manifest_url":"https://cdn.freshdev.io/assets/fdk/updates.json","period":24},"log":{"level":"info"},"javascript":{"ecma_version":2020},"request":{"timeout":15000},"global_apps":{"enabled":"false"},"easel":{"enabled":false},"job":{"timeout":120000}}"
+2025-10-05 19:44:18.498 +0530 [debug] (logger.js) Starting FDK in node v18.20.8 on win32
+2025-10-05 19:44:18.499 +0530 [debug] (sequelize.js) setting up sqilite at "C:\Users\srini\Desktop\shopeasy-freshdesk-orders-app/.fdk/store.sqlite"
+2025-10-05 19:44:18.499 +0530 [debug] (data.js) Read {"version_details":{"cli":{"deprecated":{"version":"<9","message":"This FDK version has been deprecated. There will be no further feature updates to this version. For a seamless app-building experience, ensure to move to the latest FDK version. For more information, see https://developers.freshworks.com/docs/app-sdk/v2.3/freshdesk/migration-guide/#migrate-to-the-latest-platform-version."},"forced":{"version":"7.0.0","command":"npm install https://dl.freshdev.io/cli/fdk-7.0.0.tgz -g","message":"Your FDK version has been forced updated to v7.0.0, please visit https://community.developers.freshworks.com/t/fdk-v7-0-announcing-node-js-v12-and-es6-support/3606 to know more"},"latest":{"version":"9.7.0","command":"npm install https://cdn.freshdev.io/fdk/latest.tgz -g","message":"You are on the latest FDK version. For information on the features available as part of this FDK version, see https://developers.freshworks.com/docs/?tab=modules."}},"addon":{"version":"2.2.1","url":"https://cdn.freshdev.io/assets/fdk/addons/addon.zip"}},"last_updated":{"time_stamp":1759672442759}}
+2025-10-05 19:44:18.499 +0530 [debug] (updater.js) last check less than 24 hours ago, not looking for updates
+2025-10-05 19:44:18.504 +0530 [debug] (index.js) running with opts {}
+2025-10-05 19:44:18.732 +0530 [debug] (data.js) Read {"version_details":{"cli":{"deprecated":{"version":"<9","message":"This FDK version has been deprecated. There will be no further feature updates to this version. For a seamless app-building experience, ensure to move to the latest FDK version. For more information, see https://developers.freshworks.com/docs/app-sdk/v2.3/freshdesk/migration-guide/#migrate-to-the-latest-platform-version."},"forced":{"version":"7.0.0","command":"npm install https://dl.freshdev.io/cli/fdk-7.0.0.tgz -g","message":"Your FDK version has been forced updated to v7.0.0, please visit https://community.developers.freshworks.com/t/fdk-v7-0-announcing-node-js-v12-and-es6-support/3606 to know more"},"latest":{"version":"9.7.0","command":"npm install https://cdn.freshdev.io/fdk/latest.tgz -g","message":"You are on the latest FDK version. For information on the features available as part of this FDK version, see https://developers.freshworks.com/docs/?tab=modules."}},"addon":{"version":"2.2.1","url":"https://cdn.freshdev.io/assets/fdk/addons/addon.zip"}},"last_updated":{"time_stamp":1759672442759}}
+2025-10-05 19:44:18.735 +0530 [debug] (manifest.js) Reloading manifest with {"platform-version":"2.3","product":{"freshdesk":{"location":{"ticket_sidebar":{"url":"index.html","icon":"styles/images/icon.svg"}}}},"engines":{"node":"18.20.8","fdk":"9.7.0"}}.
+2025-10-05 19:44:18.736 +0530 [debug] (manifest.js) Inferred db,backend as features.
+2025-10-05 19:44:18.791 +0530 [debug] (data.js) Read {"version_details":{"cli":{"deprecated":{"version":"<9","message":"This FDK version has been deprecated. There will be no further feature updates to this version. For a seamless app-building experience, ensure to move to the latest FDK version. For more information, see https://developers.freshworks.com/docs/app-sdk/v2.3/freshdesk/migration-guide/#migrate-to-the-latest-platform-version."},"forced":{"version":"7.0.0","command":"npm install https://dl.freshdev.io/cli/fdk-7.0.0.tgz -g","message":"Your FDK version has been forced updated to v7.0.0, please visit https://community.developers.freshworks.com/t/fdk-v7-0-announcing-node-js-v12-and-es6-support/3606 to know more"},"latest":{"version":"9.7.0","command":"npm install https://cdn.freshdev.io/fdk/latest.tgz -g","message":"You are on the latest FDK version. For information on the features available as part of this FDK version, see https://developers.freshworks.com/docs/?tab=modules."}},"addon":{"version":"2.2.1","url":"https://cdn.freshdev.io/assets/fdk/addons/addon.zip"}},"last_updated":{"time_stamp":1759672442759}}
+2025-10-05 19:44:19.228 +0530 [debug] (index.js) loading model at "C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\models\bigint-pivot.js"
+2025-10-05 19:44:19.230 +0530 [debug] (index.js) loading model at "C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\models\entity-field-choice.js"
+2025-10-05 19:44:19.231 +0530 [debug] (index.js) loading model at "C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\models\entity-field.js"
+2025-10-05 19:44:19.232 +0530 [debug] (index.js) loading model at "C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\models\entity.js"
+2025-10-05 19:44:19.233 +0530 [debug] (index.js) loading model at "C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\models\files.js"
+2025-10-05 19:44:19.235 +0530 [debug] (index.js) loading model at "C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\models\oauth-details.js"
+2025-10-05 19:44:19.236 +0530 [debug] (index.js) loading model at "C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\models\record.js"
+2025-10-05 19:44:19.239 +0530 [debug] (index.js) loading model at "C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\models\string-pivot.js"
+2025-10-05 19:44:19.483 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:44:19.499 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:44:19.501 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:44:19.502 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:44:19.505 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:44:19.508 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:44:19.510 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:44:19.519 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:44:19.521 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:44:19.522 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:44:19.527 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:44:19.532 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:44:19.537 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:44:19.538 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:44:19.539 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:44:19.544 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:44:19.552 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:44:19.578 +0530 [debug] (index.js) 'schema: ' [object Object]
+2025-10-05 19:44:20.516 +0530 [debug] (data.js) Read {"version_details":{"cli":{"deprecated":{"version":"<9","message":"This FDK version has been deprecated. There will be no further feature updates to this version. For a seamless app-building experience, ensure to move to the latest FDK version. For more information, see https://developers.freshworks.com/docs/app-sdk/v2.3/freshdesk/migration-guide/#migrate-to-the-latest-platform-version."},"forced":{"version":"7.0.0","command":"npm install https://dl.freshdev.io/cli/fdk-7.0.0.tgz -g","message":"Your FDK version has been forced updated to v7.0.0, please visit https://community.developers.freshworks.com/t/fdk-v7-0-announcing-node-js-v12-and-es6-support/3606 to know more"},"latest":{"version":"9.7.0","command":"npm install https://cdn.freshdev.io/fdk/latest.tgz -g","message":"You are on the latest FDK version. For information on the features available as part of this FDK version, see https://developers.freshworks.com/docs/?tab=modules."}},"addon":{"version":"2.2.1","url":"https://cdn.freshdev.io/assets/fdk/addons/addon.zip"}},"last_updated":{"time_stamp":1759672442759}}
+2025-10-05 19:44:21.976 +0530 [debug] (validate.js) asked to skip the following validations, 
+2025-10-05 19:44:21.977 +0530 [debug] (validate.js) running validator actions
+2025-10-05 19:44:21.977 +0530 [debug] (validate.js) running validator requests
+2025-10-05 19:44:21.977 +0530 [debug] (validate.js) running validator app-dir
+2025-10-05 19:44:21.979 +0530 [debug] (validate.js) running validator config-dir
+2025-10-05 19:44:21.979 +0530 [debug] (config-dir.js) Checking to see if C:\Users\srini\Desktop\shopeasy-freshdesk-orders-app/config/ exists.
+2025-10-05 19:44:21.979 +0530 [debug] (config-dir.js) Fetched the following config files assets,iparams.json
+2025-10-05 19:44:21.979 +0530 [debug] (validate.js) running validator custom-objects
+2025-10-05 19:44:21.980 +0530 [debug] (validate.js) running validator event
+2025-10-05 19:44:21.997 +0530 [debug] (event.js) Found ["onTicketCreateHandler","getOrderHistory","testMethod"] as exported functions.
+2025-10-05 19:44:21.998 +0530 [debug] (validate.js) running validator iparam
+2025-10-05 19:44:22.003 +0530 [debug] (validate.js) running validator lint
+2025-10-05 19:44:22.003 +0530 [debug] (lint.js) passed fix flag: undefined
+2025-10-05 19:44:22.015 +0530 [debug] (lint.js) Running the following lints on the file app\scripts\app.js : no-eval,no-alert,no-debugger,no-unreachable,no-duplicate-imports,constructor-super,for-direction,no-class-assign,no-new-native-nonconstructor,valid-typeof,no-eq-null,no-var,require-await,no-unreachable-loop,no-redeclare,no-self-assign,no-setter-return,no-shadow-restricted-names,no-this-before-super,no-unsafe-finally,no-unsafe-optional-chaining,no-unused-vars,no-useless-catch,eqeqeq,prefer-const,require-yield,no-global-assign,no-caller,no-process-env,complexity,max-nested-callbacks,handle-callback-err,getter-return,no-async-promise-executor,no-case-declarations,no-compare-neg-zero,no-cond-assign,no-const-assign,no-constant-condition,no-control-regex,no-delete-var,no-dupe-args,no-dupe-class-members,no-dupe-else-if,no-dupe-keys,no-duplicate-case,no-empty,no-empty-character-class,no-empty-pattern,no-ex-assign,no-extra-boolean-cast,no-extra-semi,no-fallthrough,no-func-assign,no-import-assign,no-inner-declarations,no-invalid-regexp,no-irregular-whitespace,no-loss-of-precision,no-misleading-character-class,no-mixed-spaces-and-tabs,no-nonoctal-decimal-escape,no-obj-calls,no-octal,no-prototype-builtins,no-regex-spaces,no-sparse-arrays,no-unexpected-multiline,no-unsafe-negation,no-unused-labels,no-useless-backreference,no-useless-escape,no-with,use-isnan,no-unpkg-cdn,no-proxy-requests,no-unhandled-promise,no-logging-rejections,no-non-client-request-model,no-deprecated-apis,no-cross-scope-assign,no-empty-function
+2025-10-05 19:44:22.172 +0530 [debug] (lint.js) Running the following lints on the file server\lib\handle-response.js : no-eval,no-alert,no-debugger,no-unreachable,no-duplicate-imports,constructor-super,for-direction,no-class-assign,no-new-native-nonconstructor,valid-typeof,no-eq-null,no-var,require-await,no-unreachable-loop,no-redeclare,no-self-assign,no-setter-return,no-shadow-restricted-names,no-this-before-super,no-unsafe-finally,no-unsafe-optional-chaining,no-unused-vars,no-useless-catch,eqeqeq,prefer-const,require-yield,no-global-assign,no-caller,no-process-env,complexity,max-nested-callbacks,handle-callback-err,getter-return,no-async-promise-executor,no-case-declarations,no-compare-neg-zero,no-cond-assign,no-const-assign,no-constant-condition,no-control-regex,no-delete-var,no-dupe-args,no-dupe-class-members,no-dupe-else-if,no-dupe-keys,no-duplicate-case,no-empty,no-empty-character-class,no-empty-pattern,no-ex-assign,no-extra-boolean-cast,no-extra-semi,no-fallthrough,no-func-assign,no-import-assign,no-inner-declarations,no-invalid-regexp,no-irregular-whitespace,no-loss-of-precision,no-misleading-character-class,no-mixed-spaces-and-tabs,no-nonoctal-decimal-escape,no-obj-calls,no-octal,no-prototype-builtins,no-regex-spaces,no-sparse-arrays,no-unexpected-multiline,no-unsafe-negation,no-unused-labels,no-useless-backreference,no-useless-escape,no-with,use-isnan,no-unpkg-cdn,no-proxy-requests,no-unhandled-promise,no-logging-rejections,no-non-client-request-model,no-deprecated-apis,no-dependency-mismatch,no-empty-function
+2025-10-05 19:44:22.178 +0530 [debug] (lint.js) Running the following lints on the file server\server.js : no-eval,no-alert,no-debugger,no-unreachable,no-duplicate-imports,constructor-super,for-direction,no-class-assign,no-new-native-nonconstructor,valid-typeof,no-eq-null,no-var,require-await,no-unreachable-loop,no-redeclare,no-self-assign,no-setter-return,no-shadow-restricted-names,no-this-before-super,no-unsafe-finally,no-unsafe-optional-chaining,no-unused-vars,no-useless-catch,eqeqeq,prefer-const,require-yield,no-global-assign,no-caller,no-process-env,complexity,max-nested-callbacks,handle-callback-err,getter-return,no-async-promise-executor,no-case-declarations,no-compare-neg-zero,no-cond-assign,no-const-assign,no-constant-condition,no-control-regex,no-delete-var,no-dupe-args,no-dupe-class-members,no-dupe-else-if,no-dupe-keys,no-duplicate-case,no-empty,no-empty-character-class,no-empty-pattern,no-ex-assign,no-extra-boolean-cast,no-extra-semi,no-fallthrough,no-func-assign,no-import-assign,no-inner-declarations,no-invalid-regexp,no-irregular-whitespace,no-loss-of-precision,no-misleading-character-class,no-mixed-spaces-and-tabs,no-nonoctal-decimal-escape,no-obj-calls,no-octal,no-prototype-builtins,no-regex-spaces,no-sparse-arrays,no-unexpected-multiline,no-unsafe-negation,no-unused-labels,no-useless-backreference,no-useless-escape,no-with,use-isnan,no-unpkg-cdn,no-proxy-requests,no-unhandled-promise,no-logging-rejections,no-non-client-request-model,no-deprecated-apis,no-dependency-mismatch,no-empty-function
+2025-10-05 19:44:22.197 +0530 [debug] (lint.js) Running the following lints on the file config\assets\iparams.js : no-unpkg-cdn,no-proxy-requests,no-logging-rejections
+2025-10-05 19:44:22.210 +0530 [debug] (validate.js) running validator manifest
+2025-10-05 19:44:22.210 +0530 [debug] (validate.js) skipping validator manifest-dependency
+2025-10-05 19:44:22.210 +0530 [debug] (validate.js) running validator oauth
+2025-10-05 19:44:22.210 +0530 [debug] (validate.js) skipping validator pkgsize
+2025-10-05 19:44:22.210 +0530 [debug] (validate.js) running validator schema
+2025-10-05 19:44:22.210 +0530 [debug] (validate.js) running validator version-check
+2025-10-05 19:44:22.211 +0530 [debug] (validate.js) running validator app-settings
+2025-10-05 19:44:22.218 +0530 [debug] (watcher.js) Preparing to watch the following files ./app,./config,./manifest.json
+2025-10-05 19:44:22.227 +0530 [error] Error: listen EADDRINUSE: address already in use :::10001
+    at Server.setupListenHandle [as _listen2] (node:net:1817:16)
+    at listenInCluster (node:net:1865:12)
+    at Server.listen (node:net:1953:7)
+    at Function.serverListen [as listen] (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\express-ws\lib\index.js:42:40)
+    at C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\cli\run.js:81:24
+    at new Promise (<anonymous>)
+    at listenOn (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\cli\run.js:80:10)
+    at Object.run (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\lib\cli\run.js:313:26)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Command.parseAsync (C:\Users\srini\AppData\Local\nvm\v18.20.8\node_modules\fdk\node_modules\commander\lib\command.js:917:5)
+undefined
