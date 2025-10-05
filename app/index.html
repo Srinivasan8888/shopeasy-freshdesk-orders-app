@@ -2,7 +2,7 @@
 
 <html lang="en">
   <head>
-    <title>A Template App</title>
+    <title>Customer Order History</title>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,8 +12,30 @@
 
   <body>
     <div class="main">
-      <p>Utilize this template code to build your App</p>
-      <p id="apptext"></p>
+      <div class="header">
+        <h3>Order History</h3>
+        <div id="customer-info"></div>
+      </div>
+      
+      <div id="loading" class="loading">
+        <span class="spinner">⏳</span>
+        <span>Loading order history...</span>
+      </div>
+      
+      <div id="error" class="error hidden">
+        <span>⚠️</span>
+        <span id="error-message">Unable to load order history</span>
+      </div>
+      
+      <div id="orders-container" class="orders-container hidden">
+        <div id="orders-summary" class="summary"></div>
+        <div id="orders-list" class="orders-list"></div>
+      </div>
+      
+      <div id="no-orders" class="no-orders hidden">
+        <span>📦</span>
+        <p>No orders found for this customer</p>
+      </div>
     </div>
   </body>
 

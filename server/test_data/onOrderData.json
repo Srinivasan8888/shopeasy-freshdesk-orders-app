@@ -1,5 +1,4 @@
-// Sample order data - in production, this would come from your database or API
-const orderData = [
+[
   {
     "order_id": "SE-100199",
     "customer_external_id": "user1",
@@ -200,75 +199,4 @@ const orderData = [
     "currency": "USD",
     "summary_items": "1x Wireless Mouse, 1x Keyboard Cover"
   }
-];
-
-exports = {
-  onTicketCreateHandler: async function (args) {
-    try {
-      const payload = {
-        ticket_id: args.data.ticket.id,
-        subject: args.data.ticket.subject,
-        requester: {
-          id: args.data.requester.id,
-          name: args.data.requester.name,
-          email: args.data.requester.email
-        },
-        created_at: args.data.ticket.created_at
-      };
-
-      const options = {
-        method: 'POST',
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(payload)
-      };
-
-      const response = await $request("https://freshdesk-orders.free.beeceptor.com/newOrder", options);
-
-      console.log("✅ Sent to Beeceptor, status:", response.status);
-      if (response.response) {
-        console.log("Response data:", response.response);
-      }
-    } catch (err) {
-      console.error("❌ Failed to send order data:", err.message || err);
-      throw new Error("Webhook failed: " + (err.message || err));
-    }
-  },
-
-  getOrderHistory: function (args) {
-    console.log('🚀 getOrderHistory method called with args:', JSON.stringify(args));
-
-    try {
-      const { email } = args;
-
-      if (!email) {
-        console.error('❌ Email is required');
-        return { error: 'Email is required' };
-      }
-
-      console.log(`🔍 Fetching order history for: ${email}`);
-
-      // Filter orders by customer email
-      const customerOrders = orderData.filter(order =>
-        order.customer_email.toLowerCase() === email.toLowerCase()
-      );
-
-      console.log(`📦 Found ${customerOrders.length} orders for ${email}`);
-      console.log('📋 Returning orders:', JSON.stringify(customerOrders.slice(0, 2))); // Log first 2 orders
-
-      // Return the orders directly (Freshworks SMI expects direct return)
-      return customerOrders;
-
-    } catch (err) {
-      console.error("❌ Failed to fetch order history:", err.message || err);
-      return { error: err.message || 'Failed to fetch order history' };
-    }
-  },
-
-  // Test method to verify SMI is working
-  testMethod: function (args) {
-    console.log('🧪 Test method called with:', args);
-    return { message: 'Test successful', timestamp: new Date().toISOString() };
-  }
-};
+]
